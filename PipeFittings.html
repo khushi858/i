@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pipe Fittings & Accessories - India Steel Industries</title>
+    <style>
+      /* ========== BASE STYLES ========== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* HEADER / NAV */
+      .top-info {
+        background: #003366;
+        color: white;
+        padding: 10px 0;
+        font-size: 14px;
+      }
+      .top-info .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .contact-top {
+        display: flex;
+        gap: 30px;
+      }
+      .top-info a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+      header {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+      }
+      .header-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .logo-box {
+        background: linear-gradient(135deg, #003366, #0055aa);
+        color: white;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 10px;
+      }
+      .logo-text h1 {
+        font-size: 24px;
+        color: #003366;
+      }
+      .logo-text p {
+        font-size: 12px;
+        color: #666;
+      }
+
+      nav {
+        background: linear-gradient(135deg, #003366, #0055aa);
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+      }
+      .nav-links li a {
+        color: white;
+        text-decoration: none;
+        padding: 18px 30px;
+        display: block;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+      .nav-links li a:hover,
+      .nav-links li a.active {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* BREADCRUMB / HERO */
+      .breadcrumb {
+        background: #f5f5f5;
+        padding: 15px 0;
+      }
+      .breadcrumb-list {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+      }
+      .breadcrumb-list a {
+        color: #003366;
+        text-decoration: none;
+      }
+      .hero-slider {
+        background: linear-gradient(135deg, #003366, #0055aa);
+        color: white;
+        text-align: center;
+        padding: 60px 0;
+      }
+      .hero-content h2 {
+        font-size: 42px;
+        margin-bottom: 10px;
+      }
+
+      /* CATEGORY SECTION */
+      .category-section {
+        padding: 60px 0;
+        background: #f9f9f9;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      .section-title h2 {
+        font-size: 36px;
+        color: #003366;
+      }
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+      }
+
+      .category-card {
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .category-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+      }
+
+      .category-card img.card-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.4s ease;
+      }
+
+      .category-card:hover img.card-img {
+        transform: scale(1.05);
+      }
+
+      .category-card .card-content {
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .category-card h3 {
+        font-size: 1.1rem;
+        color: #222;
+        margin-bottom: 0.5rem;
+      }
+
+      .category-card p {
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      .card-content {
+        text-align: center;
+        padding: 25px;
+      }
+      .card-content h3 {
+        color: #003366;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      /* MODALS */
+      .spec-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        z-index: 9999;
+        overflow-y: auto;
+        animation: slideIn 0.4s ease;
+      }
+      .spec-modal.active {
+        display: block;
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .modal-header {
+        background: linear-gradient(135deg, #003366, #0055aa);
+        color: white;
+        padding: 30px 0;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .modal-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .close-btn {
+        background: white;
+        color: #003366;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .modal-body {
+        padding: 60px 0;
+      }
+      .spec-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        margin-bottom: 40px;
+      }
+      .spec-card h3 {
+        color: #003366;
+        border-bottom: 3px solid #ffd700;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+      }
+      .spec-list {
+        list-style: none;
+        padding-left: 0;
+      }
+      .spec-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+      .spec-list li:before {
+        content: "✓ ";
+        color: #003366;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .applications-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      .application-item {
+        text-align: center;
+        background: #f7f7f7;
+        border-radius: 12px;
+        padding: 20px;
+        font-size: 14px;
+      }
+      
+      footer {
+        background: #1a1a1a;
+        color: white;
+        padding: 50px 0 20px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+      .footer-section h3 {
+        color: #ffd700;
+        margin-bottom: 20px;
+      }
+      .footer-section ul {
+        list-style: none;
+      }
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+      .footer-section a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .footer-section a:hover {
+        color: #ffd700;
+      }
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div class="top-info">
+      <div class="container">
+        <div class="contact-top">
+          <span>📧 info@indiasteelind.com</span>
+          <span>📞 +91 22 4567 8900</span>
+        </div>
+        <div>
+          <a href="#">Get Quote</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <div class="container header-main">
+        <div class="logo-section">
+          <div class="logo-box">ISI</div>
+          <div class="logo-text">
+            <h1>INDIA STEEL INDUSTRIES</h1>
+            <p>Quality Steel Solutions Since 1998</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <div class="container">
+        <ul class="nav-links">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#about">ABOUT US</a></li>
+          <li><a href="index.html#products" class="active">PRODUCTS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <section class="breadcrumb">
+      <div class="container">
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Home</a></li>
+          <li>›</li>
+          <li><a href="index.html#products">Products</a></li>
+          <li>›</li>
+          <li><span>Pipe Fittings & Accessories</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HERO -->
+    <section class="hero-slider">
+      <div class="container">
+        <div class="hero-content">
+          <h2>🔧 Pipe Fittings & Accessories</h2>
+          <p>
+            Complete range of pipe fittings, valves, and accessories for
+            industrial, commercial, and residential piping systems.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY SECTION -->
+    <section class="category-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Select a Category</h2>
+          <p>Click on any category to view detailed specifications</p>
+        </div>
+
+      <div class="category-grid">
+  <div class="category-card" onclick="openSpec('nipples', this)">
+    <img src="https://shreebajrangudyog.com/wp-content/uploads/2025/01/banner2.jpg" 
+         alt="B.P. Nipples" class="card-img" />
+    <div class="card-content">
+      <h3>B.P. Nipples (Threaded Nipples)</h3>
+      <p>Barrel pattern threaded nipples for pipe connections</p>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="openSpec('elbows', this)">
+    <img src="https://www.ltdpipeline.com/wp-content/uploads/2023/05/bw_elbows1-2.gif" 
+         alt="Elbows 90 and 45 degree" class="card-img" />
+    <div class="card-content">
+      <h3>Elbows (90°, 45°)</h3>
+      <p>Threaded and butt-weld elbows for directional changes</p>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="openSpec('tees', this)">
+    <img src="https://www.ng-steel.com/wp-content/uploads/2021/10/inconel-equal-unequal-tee.jpg"
+         alt="Pipe Tees" class="card-img" />
+    <div class="card-content">
+      <h3>Tees (Equal / Reducing)</h3>
+      <p>T-junction fittings for branch connections</p>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="openSpec('couplings', this)">
+    <img src="https://5.imimg.com/data5/JR/KM/EF/SELLER-663564/fcs-socket-weld-fittings-3000-lbs-ibr-elbow-tee-coupling-union--500x500.png"
+         alt="Couplings and Sockets" class="card-img" />
+    <div class="card-content">
+      <h3>Couplings / Unions / Sockets</h3>
+      <p>Connection fittings for joining pipe sections</p>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="openSpec('reducers', this)">
+    <img src="https://www.oepipe.com/uploads/12033/products/p2024041711410467238.jpg?size=450x0"
+         alt="Reducers Concentric and Eccentric" class="card-img" />
+    <div class="card-content">
+      <h3>Reducers (Concentric / Eccentric)</h3>
+      <p>Diameter reducing fittings for pipe size transitions</p>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="openSpec('hex-nipples', this)">
+    <img src="https://5.imimg.com/data5/SELLER/Default/2022/6/NN/IC/QG/93054272/stainless-steel-threaded-hex-nipple-500x500-500x500.jpg"
+         alt="Hex Nipples" class="card-img" />
+    <div class="card-content">
+      <h3>Hex Nipples / Threaded Bars</h3>
+      <p>Hexagonal nipples and threaded connecting bars</p>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="openSpec('bushes', this)">
+    <img src="https://5.imimg.com/data5/II/GV/MY-2620073/quick-change-coupling-500x500.jpg"
+         alt="Bushes and Caps" class="card-img" />
+    <div class="card-content">
+      <h3>Bushes, Plugs, Caps</h3>
+      <p>End closures and thread adapters for pipe systems</p>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="openSpec('flanges', this)">
+    <img src="https://www.kencotubes.com/blog/wp-content/uploads/2021/12/Flanges.jpg"
+         alt="Flanges" class="card-img" />
+    <div class="card-content">
+      <h3>Flanges (Multiple Types)</h3>
+      <p>Slip-on, weld neck, blind, and socket weld flanges</p>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="openSpec('valves', this)">
+    <img src="https://www.airaindia.com/wp-content/uploads/2024/09/Stainless-Steel-Body-Pressure-Reducing-Valve-Flanged-05.webp"
+         alt="Industrial Valves" class="card-img" />
+    <div class="card-content">
+      <h3>Valve Range</h3>
+      <p>Ball, gate, check, globe, and butterfly valves</p>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="openSpec('adaptors', this)">
+    <img src="https://www.reloadingsolutions.com/cdn/shop/products/red-70030-1inch-Threaded-Bushing_800x800.jpg?v=1671117162"
+         alt="Thread Adaptors" class="card-img" />
+    <div class="card-content">
+      <h3>Thread Adaptors / Bushings</h3>
+      <p>Thread converters and size adapting bushings</p>
+    </div>
+  </div>
+</div>
+
+  
+ 
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS -->
+    <!-- 2.1 B.P. Nipples -->
+    <div class="spec-modal" id="modal-nipples">
+      <div class="modal-header">
+        <div class="container">
+          <h2>B.P. Nipples (Threaded Nipples)</h2>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-card">
+            <h3>Specifications</h3>
+            <ul class="spec-list">
+              <li>Material: MS, GI, SS 304/316, Brass</li>
+              <li>Size Range: 1/8" to 4" (6mm to 100mm)</li>
+              <li>Thread Type: BSP, NPT, BSPT</li>
+              <li>Length: 25mm to 300mm (customizable)</li>
+              <li>Finish: Black, Galvanized, Polished</li>
+              <li>Standards: IS 1239, BS 1740, ASTM A733</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">🏭 Industrial Piping</div>
+              <div class="application-item">💧 Water Supply Systems</div>
+              <div class="application-item">⛽ Oil & Gas Lines</div>
+              <div class="application-item">🏗️ HVAC Systems</div>
+              <div class="application-item">🔥 Fire Protection</div>
+              <div class="application-item">🏢 Plumbing Applications</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.2 Elbows -->
+    <div class="spec-modal" id="modal-elbows">
+      <div class="modal-header">
+        <div class="container">
+          <h2>Elbows (90°, 45° — Threaded / Butt-Weld)</h2>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-card">
+            <h3>Specifications</h3>
+            <ul class="spec-list">
+              <li>Material: CS, SS 304/316/316L, Alloy Steel</li>
+              <li>Types: 90° LR/SR, 45°, 180° Return Bends</li>
+              <li>Size: 1/8" to 48" (threaded), 1/2" to 72" (butt-weld)</li>
+              <li>Pressure Rating: 2000 PSI, 3000 PSI, 6000 PSI</li>
+              <li>Connection: Threaded (NPT/BSP), Socket Weld, Butt Weld</li>
+              <li>Standards: ASME B16.9, ASME B16.11, MSS SP-75</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">⛽ Petroleum Refineries</div>
+              <div class="application-item">🏭 Chemical Plants</div>
+              <div class="application-item">⚡ Power Generation</div>
+              <div class="application-item">🚢 Marine Applications</div>
+              <div class="application-item">💊 Pharmaceutical</div>
+              <div class="application-item">🍺 Food & Beverage</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.3 Tees -->
+    <div class="spec-modal" id="modal-tees">
+      <div class="modal-header">
+        <div class="container">
+          <h2>Tees (Equal / Reducing)</h2>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-card">
+            <h3>Specifications</h3>
+            <ul class="spec-list">
+              <li>Material: Carbon Steel, SS 304/316, Alloy Steel</li>
+              <li>Types: Equal Tee, Reducing Tee, Lateral Tee</li>
+              <li>Size: 1/8" to 48" (NPS)</li>
+              <li>Connection: Butt Weld, Socket Weld, Threaded</li>
+              <li>Wall Thickness: SCH 10 to SCH XXS</li>
+              <li>Standards: ASME B16.9, ASME B16.11, MSS SP-75</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">🏭 Process Industries</div>
+              <div class="application-item">⛽ Oil & Gas Distribution</div>
+              <div class="application-item">💧 Water Treatment</div>
+              <div class="application-item">🔥 Steam Systems</div>
+              <div class="application-item">🏗️ HVAC Networks</div>
+              <div class="application-item">🏢 Building Services</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.4 Couplings / Unions / Sockets -->
+    <div class="spec-modal" id="modal-couplings">
+      <div class="modal-header">
+        <div class="container">
+          <h2>Couplings / Unions / Sockets</h2>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-card">
+            <h3>Specifications</h3>
+            <ul class="spec-list">
+              <li>Material: MS, SS 304/316, Brass, Bronze</li>
+              <li>Types: Full Coupling, Half Coupling, Union, Socket</li>
+              <li>Size: 1/8" to 4" (threaded), 1/2" to 4" (socket weld)</li>
+              <li>Pressure Rating: 2000#, 3000#, 6000# PSI</li>
+              <li>Connection: NPT, BSP, Socket Weld</li>
+              <li>Standards: ASME B16.11, BS 3799, IS 1239</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">🔧 Maintenance Points</div>
+              <div class="application-item">🏭 Industrial Piping</div>
+              <div class="application-item">💧 Plumbing Systems</div>
+              <div class="application-item">⛽ Gas Distribution</div>
+              <div class="application-item">🏗️ HVAC Installations</div>
+              <div class="application-item">🔥 Fire Protection</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.5 Reducers -->
+    <div class="spec-modal" id="modal-reducers">
+      <div class="modal-header">
+        <div class="container">
+          <h2>Reducers (Concentric / Eccentric)</h2>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-card">
+            <h3>Specifications</h3>
+            <ul class="spec-list">
+              <li>Material: Carbon Steel, Stainless Steel, Alloy Steel</li>
+              <li>Types: Concentric Reducer, Eccentric Reducer</li>
+              <li>Size Range: 1/2" x 1/4" to 48" x 36"</li>
+              <li>Connection: Butt Weld, Socket Weld, Threaded</li>
+              <li>Wall Thickness: SCH 10 to SCH XXS</li>
+              <li>Standards: ASME B16.9, ASME B16.25, MSS SP-75</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">🏭 Process Lines</div>
+              <div class="application-item">💧 Water Systems</div>
+              <div class="application-item">⛽ Oil & Gas Pipelines</div>
+              <div class="application-item">🔥 Steam Distribution</div>
+              <div class="application-item">🏗️ HVAC Systems</div>
+              <div class="application-item">⚡ Power Plants</div>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Key Differences</h3>
+            <ul class="spec-list">
+              <li>
+                Concentric: Both pipes centered on same axis, vertical lines
+              </li>
+              <li>
+                Eccentric: One side flat, prevents air pockets, horizontal lines
+              </li>
+              <li>Concentric used in gas/vapor lines (vertical orientation)</li>
+              <li>Eccentric used in liquid lines to avoid cavitation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.6 Hex Nipples / Threaded Bars -->
+    <div class="spec-modal" id="modal-hex-nipples">
+      <div class="modal-header">
+        <div class="container">
+          <h2>Hex Nipples / Threaded Bars</h2>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-card">
+            <h3>Specifications</h3>
+            <ul class="spec-list">
+              <li>Material: MS, GI, SS 304/316, Brass</li>
+              <li>Size: 1/8" to 4" (6mm to 100mm)</li>
+              <li>Thread Type: BSP, NPT, BSPT</li>
+              <li>Length: 50mm to 500mm (customizable)</li>
+              <li>Finish: Black, Hot Dip Galvanized, Electroplated</li>
+              <li>Standards: IS 1239, ASTM A733, BS 1740</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">🏭 Industrial Connections</div>
+              <div class="application-item">💧 Plumbing Systems</div>
+              <div class="application-item">⛽ Gas Lines</div>
+              <div class="application-item">🔥 Fire Fighting Systems</div>
+              <div class="application-item">🏗️ HVAC Installations</div>
+              <div class="application-item">⚙️ Machinery Connections</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.7 Bushes, Plugs, Caps -->
+    <div class="spec-modal" id="modal-bushes">
+      <div class="modal-header">
+        <div class="container">
+          <h2>Bushes, Plugs, Caps</h2>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-card">
+            <h3>Specifications</h3>
+            <ul class="spec-list">
+              <li>Material: Carbon Steel, SS 304/316, Brass, Bronze</li>
+              <li>Types: Hex Bush, Square Plug, Round Cap, Butt Weld Cap</li>
+              <li>Size: 1/8" to 4" (threaded), 1/2" to 48" (butt weld caps)</li>
+              <li>Connection: Threaded (NPT/BSP), Socket Weld, Butt Weld</li>
+              <li>Pressure Rating: 2000#, 3000#, 6000# PSI</li>
+              <li>Standards: ASME B16.9, ASME B16.11, MSS SP-43</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">🔚 Pipeline Termination</div>
+              <div class="application-item">🔧 Maintenance Access</div>
+              <div class="application-item">🏭 Process Equipment</div>
+              <div class="application-item">⛽ Oil & Gas Systems</div>
+              <div class="application-item">💧 Water Distribution</div>
+              <div class="application-item">🔥 Steam Lines</div>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Product Types</h3>
+            <ul class="spec-list">
+              <li>Bushes: Reduce thread size (male-female threads)</li>
+              <li>Plugs: Male threaded closures for pipe ends</li>
+              <li>Caps: Female threaded or butt-weld closures</li>
+              <li>Square Head Plugs: Easy installation/removal with wrench</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.8 Flanges -->
+    <div class="spec-modal" id="modal-flanges">
+      <div class="modal-header">
+        <div class="container">
+          <h2>Flanges (Slip-on, Weld Neck, Blind, Socket Weld)</h2>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-card">
+            <h3>Specifications</h3>
+            <ul class="spec-list">
+              <li>Material: Carbon Steel, SS 304/316/316L, Alloy Steel</li>
+              <li>
+                Types: Weld Neck, Slip-On, Blind, Socket Weld, Threaded, Lap
+                Joint
+              </li>
+              <li>Size: 1/2" to 60" NPS</li>
+              <li>Pressure Class: 150#, 300#, 600#, 900#, 1500#, 2500#</li>
+              <li>
+                Facing: Flat Face (FF), Raised Face (RF), Ring Type Joint (RTJ)
+              </li>
+              <li>Standards: ASME B16.5, ASME B16.47, BS 4504, DIN</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">⛽ Oil & Gas Industry</div>
+              <div class="application-item">🏭 Chemical Plants</div>
+              <div class="application-item">⚡ Power Generation</div>
+              <div class="application-item">💧 Water Treatment</div>
+              <div class="application-item">🚢 Shipbuilding</div>
+              <div class="application-item">💊 Pharmaceutical</div>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Flange Types Comparison</h3>
+            <ul class="spec-list">
+              <li>
+                Weld Neck: High pressure/temperature, best strength & fatigue
+                resistance
+              </li>
+              <li>Slip-On: Easy installation, lower cost, moderate pressure</li>
+              <li>Blind: Used to close pipe ends or vessel openings</li>
+              <li>Socket Weld: Small bore high-pressure applications</li>
+              <li>Threaded: No welding required, easy maintenance</li>
+              <li>
+                Lap Joint: Used with stub ends, allows bolt hole alignment
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.9 Valve Range -->
+    <div class="spec-modal" id="modal-valves">
+      <div class="modal-header">
+        <div class="container">
+          <h2>Valve Range (Ball, Gate, Check, Globe, Butterfly)</h2>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-card">
+            <h3>Specifications</h3>
+            <ul class="spec-list">
+              <li>
+                Material: Cast Iron, Carbon Steel, SS 304/316, Brass, Bronze
+              </li>
+              <li>Size Range: 1/4" to 48" (depending on valve type)</li>
+              <li>Pressure Rating: PN 10/16/25/40, Class 150/300/600/900</li>
+              <li>Connection: Flanged, Threaded, Socket Weld, Butt Weld</li>
+              <li>Operation: Manual, Pneumatic, Electric, Hydraulic</li>
+              <li>Standards: API 6D, ASME B16.34, BS 5351, IS 14846</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h3>Valve Types & Applications</h3>
+            <ul class="spec-list">
+              <li>
+                Ball Valve: Quick shut-off, low torque, oil/gas/water systems
+              </li>
+              <li>
+                Gate Valve: Full bore, minimal pressure drop, on/off service
+              </li>
+              <li>Check Valve: Prevents backflow, protects equipment</li>
+              <li>
+                Globe Valve: Throttling service, flow regulation, steam lines
+              </li>
+              <li>
+                Butterfly Valve: Large diameter, lightweight, quick operation
+              </li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h3>Industries Served</h3>
+            <div class="applications-grid">
+              <div class="application-item">⛽ Oil & Gas</div>
+              <div class="application-item">💧 Water Treatment</div>
+              <div class="application-item">🏭 Chemical Processing</div>
+              <div class="application-item">⚡ Power Generation</div>
+              <div class="application-item">🏗️ HVAC Systems</div>
+              <div class="application-item">🔥 Fire Protection</div>
+              <div class="application-item">💊 Pharmaceutical</div>
+              <div class="application-item">🍺 Food & Beverage</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2.10 Thread Adaptors / Bushings -->
+    <div class="spec-modal" id="modal-adaptors">
+      <div class="modal-header">
+        <div class="container">
+          <h2>Thread Adaptors / Bushings</h2>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-card">
+            <h3>Specifications</h3>
+            <ul class="spec-list">
+              <li>Material: MS, SS 304/316, Brass, Bronze</li>
+              <li>Types: Hex Bushing, Round Bushing, Male-Female Adaptor</li>
+              <li>Size: 1/8" to 4" (various combinations)</li>
+              <li>Thread Types: BSP to NPT, Metric to BSP, NPT to BSPT</li>
+              <li>Pressure Rating: Up to 3000 PSI</li>
+              <li>Standards: ASME B16.11, BS 21, IS 554</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">🔄 Thread Conversion</div>
+              <div class="application-item">📏 Size Reduction</div>
+              <div class="application-item">🔧 Equipment Connection</div>
+              <div class="application-item">🏭 International Standards</div>
+              <div class="application-item">💧 Plumbing Systems</div>
+              <div class="application-item">⛽ Gas Distribution</div>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Common Conversions</h3>
+            <ul class="spec-list">
+              <li>BSP to NPT: British to American thread standards</li>
+              <li>Male to Female: Gender conversion adaptors</li>
+              <li>Size Reduction: Connect different pipe sizes</li>
+              <li>Metric to Imperial: International compatibility</li>
+              <li>Hex Design: Easy installation with standard wrenches</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3>About India Steel</h3>
+            <p>
+              Leading supplier of quality steel products in India. We provide
+              comprehensive steel solutions with international standard
+              compliance.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Service Categories</h3>
+            <ul>
+              <li><a href="#">Thread Cutting</a></li>
+              <li><a href="#">Welding Services</a></li>
+              <li><a href="#">Galvanizing</a></li>
+              <li><a href="#">Assembly & Spools</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Standards We Follow</h3>
+            <ul>
+              <li>ASTM Standards</li>
+              <li>API Specifications</li>
+              <li>IS Standards</li>
+              <li>BS Standards</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 India Steel Industries. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+
+    <script>
+      function openSpec(id, card) {
+        document
+          .querySelectorAll(".spec-modal")
+          .forEach((m) => m.classList.remove("active"));
+        document
+          .querySelectorAll(".category-card")
+          .forEach((c) => c.classList.remove("selected"));
+        document.getElementById("modal-" + id).classList.add("active");
+        card.classList.add("selected");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function closeSpec() {
+        document
+          .querySelectorAll(".spec-modal")
+          .forEach((m) => m.classList.remove("active"));
+        document
+          .querySelectorAll(".category-card")
+          .forEach((c) => c.classList.remove("selected"));
+      }
+    </script>
+  </body>
+</html>

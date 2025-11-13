@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steel Pipes & Tubes - India Steel Industries</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .top-info {
+        background: #003366;
+        color: white;
+        padding: 10px 0;
+        font-size: 14px;
+      }
+      .top-info .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .contact-top {
+        display: flex;
+        gap: 30px;
+      }
+      .top-info a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+
+      header {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+      }
+      .header-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+      }
+      .logo-box {
+        background: linear-gradient(135deg, #003366, #0055aa);
+        color: white;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 10px;
+      }
+      .logo-text h1 {
+        font-size: 24px;
+        color: #003366;
+      }
+      .logo-text p {
+        font-size: 12px;
+        color: #666;
+      }
+      .header-contact {
+        text-align: right;
+      }
+      .phone {
+        font-size: 20px;
+        font-weight: bold;
+        color: #003366;
+      }
+      .email {
+        font-size: 14px;
+        color: #666;
+      }
+
+      nav {
+        background: linear-gradient(135deg, #003366, #0055aa);
+        padding: 0;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+      }
+      .nav-links li a {
+        color: white;
+        text-decoration: none;
+        padding: 18px 30px;
+        display: block;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+      .nav-links li a:hover,
+      .nav-links li a.active {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .breadcrumb {
+        background: #f5f5f5;
+        padding: 15px 0;
+      }
+      .breadcrumb-list {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .breadcrumb-list a {
+        color: #003366;
+        text-decoration: none;
+      }
+
+      .hero-slider {
+        background: linear-gradient(135deg, #003366, #0055aa);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+      }
+      .hero-content h2 {
+        font-size: 42px;
+        margin-bottom: 15px;
+      }
+      .hero-content p {
+        font-size: 18px;
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0.95;
+      }
+
+      .category-section {
+        padding: 60px 0;
+        background: #f9f9f9;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      .section-title h2 {
+        font-size: 36px;
+        color: #003366;
+        margin-bottom: 10px;
+      }
+      .section-title p {
+        color: #666;
+        font-size: 16px;
+      }
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .category-card img.card-img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+
+      .category-card {
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        background: #fff;
+      }
+
+      .category-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      }
+
+      .category-card.selected {
+        border-color: #ffd700;
+        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+      }
+      .card-icon {
+        background: linear-gradient(135deg, #003366, #0055aa);
+        color: white;
+        padding: 40px;
+        text-align: center;
+        font-size: 60px;
+      }
+      .card-content {
+        padding: 30px;
+        text-align: center;
+      }
+      .card-content h3 {
+        color: #003366;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .card-content p {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .spec-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        z-index: 9999;
+        overflow-y: auto;
+        animation: slideIn 0.4s ease;
+      }
+      .spec-modal.active {
+        display: block;
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .modal-header {
+        background: linear-gradient(135deg, #003366, #0055aa);
+        color: white;
+        padding: 30px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+      .modal-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .modal-title h2 {
+        font-size: 32px;
+      }
+      .close-btn {
+        background: white;
+        color: #003366;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .close-btn:hover {
+        background: #ffd700;
+        transform: scale(1.05);
+      }
+
+      .modal-body {
+        padding: 60px 0;
+      }
+      .spec-details-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .spec-card {
+        background: white;
+        border-radius: 15px;
+        padding: 35px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+      }
+      .spec-card h3 {
+        color: #003366;
+        font-size: 24px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #ffd700;
+      }
+      .spec-list {
+        list-style: none;
+        padding: 0;
+      }
+      .spec-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        gap: 12px;
+      }
+      .spec-list li:last-child {
+        border-bottom: none;
+      }
+      .spec-list li::before {
+        content: "✓";
+        color: #ffd700;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .spec-list strong {
+        color: #003366;
+      }
+
+      .applications-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .application-item {
+        background: linear-gradient(135deg, #f5f5f5, #ffffff);
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.3s;
+        border: 2px solid transparent;
+      }
+      .application-item:hover {
+        border-color: #003366;
+        transform: scale(1.05);
+      }
+      .application-icon {
+        font-size: 48px;
+        margin-bottom: 15px;
+      }
+      .application-item h4 {
+        color: #003366;
+        font-size: 16px;
+      }
+
+      footer {
+        background: #1a1a1a;
+        color: white;
+        padding: 50px 0 20px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+      .footer-section h3 {
+        color: #ffd700;
+        margin-bottom: 20px;
+      }
+      .footer-section ul {
+        list-style: none;
+      }
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+      .footer-section a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .footer-section a:hover {
+        color: #ffd700;
+      }
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        color: #999;
+      }
+
+      @media (max-width: 1024px) {
+        .category-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .category-grid {
+          grid-template-columns: 1fr;
+        }
+        .spec-details-grid {
+          grid-template-columns: 1fr;
+        }
+        .applications-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .nav-links {
+          flex-direction: column;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-info">
+      <div class="container">
+        <div class="contact-top">
+          <span>📧 info@indiasteelind.com</span>
+          <span>📞 +91 22 4567 8900</span>
+        </div>
+        <div>
+          <a href="#quote">Get Quote</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <div class="container">
+        <div class="header-main">
+          <div class="logo-section">
+            <div class="logo-box">ISI</div>
+            <div class="logo-text">
+              <h1>INDIA STEEL INDUSTRIES</h1>
+              <p>Quality Steel Solutions Since 1998</p>
+            </div>
+          </div>
+          <div class="header-contact">
+            <div class="phone">+91 22 4567 8900</div>
+            <div class="email">info@indiasteelind.com</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <div class="container">
+        <ul class="nav-links">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#about">ABOUT US</a></li>
+          <li><a href="index.html#products" class="active">Products</a></li>
+          <li><a href="#features">WHY CHOOSE US</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <section class="breadcrumb">
+      <div class="container">
+        <ul class="breadcrumb-list">
+          <li><a href="index.html">Home</a></li>
+          <li>›</li>
+          <li><a href="index.html#products">Products</a></li>
+          <li>›</li>
+          <li><span>Steel Pipes & Tubes</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="hero-slider">
+      <div class="container">
+        <div class="hero-content">
+          <h2>🛠️ Steel Pipes & Tubes</h2>
+          <p>
+            MS, ERW, Seamless, and Hollow Section Pipes & Tubes for structural,
+            plumbing, and industrial applications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Select a Product Category</h2>
+          <p>Click on any card to view detailed specifications</p>
+        </div>
+
+        <div class="category-grid">
+          <div class="category-card" onclick="openSpec('ms-black-pipes', this)">
+            <img
+              src="https://www.steeltubesindia.net/img/is-1239-pipe.jpg"
+              alt="MS Black Pipes"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>MS Black Pipes</h3>
+              <p>IS:1239 A/B/C Class for structural & plumbing applications</p>
+            </div>
+          </div>
+
+          <div class="category-card" onclick="openSpec('gi-pipes', this)">
+            <img
+              src="https://aliyaqoob.com/resource/image/1665650329Galvanized-Iron-Pipes-315x315-1.jpg"
+              alt="GI Pipes"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>GI Pipes</h3>
+              <p>Galvanized pipes with superior corrosion resistance</p>
+            </div>
+          </div>
+
+          <div class="category-card" onclick="openSpec('seamless-pipes', this)">
+            <img
+              src="https://www.astmsteelpipes.com/uploaded_files/category_images/Seamless-Steel-Pipe01_10_37.jpg"
+              alt="Seamless Pipes"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Seamless Pipes</h3>
+              <p>ASTM/API grade pipes for high-pressure applications</p>
+            </div>
+          </div>
+
+          <div class="category-card" onclick="openSpec('erw-pipes', this)">
+            <img
+              src="https://www.oshwin.com/images/stainless-steel-erw-pipe-2.jpg"
+              alt="ERW Pipes"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>ERW Pipes</h3>
+              <p>Electric Resistance Welded pipes for general use</p>
+            </div>
+          </div>
+
+          <div
+            class="category-card"
+            onclick="openSpec('stainless-steel-pipes', this)"
+          >
+            <img
+              src="https://www.ashapurasteelpipe.com/wp-content/webp-express/webp-images/uploads/2023/06/Carbon-Steel-Seamless-Pipe-Vs-Seamless-Steel-Pipe.jpg.webp"
+              alt="Stainless Steel Pipes"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Stainless Steel Pipes</h3>
+              <p>SS 202/304/316 for chemical & food industries</p>
+            </div>
+          </div>
+
+          <div class="category-card" onclick="openSpec('conduit-pipes', this)">
+            <img
+              src="https://m.media-amazon.com/images/I/51IhIjmaxGL._AC_UF1000,1000_QL80_.jpg"
+              alt="Conduit Pipes"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Conduit Pipes</h3>
+              <p>GI electrical conduit for safe cable management</p>
+            </div>
+          </div>
+
+          <div
+            class="category-card"
+            onclick="openSpec('round-hollow-sections', this)"
+          >
+            <img
+              src="https://www.bhawalsteelagency.com/images/pipe%20tube/circular-hollow-section-4.jpg"
+              alt="Round Hollow Sections"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Round Hollow Sections</h3>
+              <p>Circular sections for structural frameworks</p>
+            </div>
+          </div>
+
+          <div
+            class="category-card"
+            onclick="openSpec('square-hollow-sections', this)"
+          >
+            <img
+              src="https://www.tubetrading.in/files/catalog/product/ms-square-pipes.png"
+              alt="Square Hollow Sections"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Square Hollow Sections</h3>
+              <p>Square profiles for columns & fabrication</p>
+            </div>
+          </div>
+
+          <div
+            class="category-card"
+            onclick="openSpec('rectangular-hollow-sections', this)"
+          >
+            <img
+              src="https://cpimg.tistatic.com/10600670/b/4/Rectangular-Hollow-Section-Pipes.jpg"
+              alt="Rectangular Hollow Sections"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3>Rectangular Hollow Sections</h3>
+              <p>RHS for beams, trusses & modern structures</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL 1 -->
+    <div class="spec-modal" id="modal-ms-black-pipes">
+      <div class="modal-header">
+        <div class="container">
+          <div class="modal-title">
+            <h2>MS Black Pipes (IS:1239 — A/B/C Class)</h2>
+          </div>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-details-grid">
+            <div class="spec-card">
+              <h3>Specifications</h3>
+              <ul class="spec-list">
+                <li><strong>Standard:</strong> IS:1239 (Part 1)</li>
+                <li>
+                  <strong>Classes:</strong> A / B / C (Light / Medium / Heavy)
+                </li>
+                <li><strong>Size Range:</strong> 15mm NB to 300mm NB</li>
+                <li><strong>Ends:</strong> Plain / Screwed & Socketed</li>
+                <li><strong>Finish:</strong> Black (Varnished / Oiled)</li>
+              </ul>
+            </div>
+            <div class="spec-card">
+              <h3>Features</h3>
+              <ul class="spec-list">
+                <li>Durable and cost-effective</li>
+                <li>Excellent weldability</li>
+                <li>High tensile strength</li>
+                <li>Long service life</li>
+                <li>Suitable for low-pressure conveyance</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">
+                <div class="application-icon">🏗️</div>
+                <h4>Construction</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🚰</div>
+                <h4>Water Supply</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🏭</div>
+                <h4>Fabrication</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">⚙️</div>
+                <h4>General Engineering</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 2 -->
+    <div class="spec-modal" id="modal-gi-pipes">
+      <div class="modal-header">
+        <div class="container">
+          <div class="modal-title"><h2>GI Pipes (Galvanized Iron)</h2></div>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-details-grid">
+            <div class="spec-card">
+              <h3>Specifications</h3>
+              <ul class="spec-list">
+                <li><strong>Standard:</strong> IS:1239 / IS:3589</li>
+                <li><strong>Coating:</strong> Hot Dip Galvanized (HDG)</li>
+                <li><strong>Thickness:</strong> 2mm – 8mm</li>
+                <li><strong>Ends:</strong> Plain / Threaded</li>
+                <li><strong>Finish:</strong> Silver Zinc Coated</li>
+              </ul>
+            </div>
+            <div class="spec-card">
+              <h3>Features</h3>
+              <ul class="spec-list">
+                <li>Corrosion-resistant</li>
+                <li>Long outdoor life</li>
+                <li>Easy to install</li>
+                <li>Leak-proof joints</li>
+                <li>Ideal for potable water systems</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">
+                <div class="application-icon">🚿</div>
+                <h4>Plumbing</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🏠</div>
+                <h4>Building Services</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🌾</div>
+                <h4>Irrigation</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">⚙️</div>
+                <h4>Outdoor Installations</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 3 -->
+    <div class="spec-modal" id="modal-seamless-pipes">
+      <div class="modal-header">
+        <div class="container">
+          <div class="modal-title"><h2>Seamless Pipes (ASTM / API)</h2></div>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-details-grid">
+            <div class="spec-card">
+              <h3>Specifications</h3>
+              <ul class="spec-list">
+                <li><strong>Standards:</strong> ASTM A106, API 5L</li>
+                <li><strong>Grades:</strong> Gr. A / B / C / X42 to X70</li>
+                <li><strong>Size Range:</strong> ½" to 24" NB</li>
+                <li><strong>Type:</strong> Hot Finished / Cold Drawn</li>
+                <li><strong>End:</strong> Plain / Beveled</li>
+              </ul>
+            </div>
+            <div class="spec-card">
+              <h3>Features</h3>
+              <ul class="spec-list">
+                <li>High pressure strength</li>
+                <li>No weld joints</li>
+                <li>Uniform wall thickness</li>
+                <li>High temperature resistance</li>
+                <li>Superior dimensional accuracy</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">
+                <div class="application-icon">⛽</div>
+                <h4>Oil & Gas</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🏭</div>
+                <h4>Power Plants</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">⚙️</div>
+                <h4>Mechanical Systems</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🚧</div>
+                <h4>Industrial Piping</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 4 -->
+    <div class="spec-modal" id="modal-erw-pipes">
+      <div class="modal-header">
+        <div class="container">
+          <div class="modal-title"><h2>ERW Pipes</h2></div>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-details-grid">
+            <div class="spec-card">
+              <h3>Specifications</h3>
+              <ul class="spec-list">
+                <li><strong>Standard:</strong> IS:3589 / IS:1239</li>
+                <li><strong>Size Range:</strong> 15mm NB – 600mm NB</li>
+                <li><strong>Thickness:</strong> 2mm – 10mm</li>
+                <li><strong>Material:</strong> Mild Steel</li>
+                <li><strong>Ends:</strong> Plain / Beveled</li>
+              </ul>
+            </div>
+            <div class="spec-card">
+              <h3>Features</h3>
+              <ul class="spec-list">
+                <li>Uniform wall thickness</li>
+                <li>Accurate dimensions</li>
+                <li>Easy to fabricate</li>
+                <li>Economical and durable</li>
+                <li>Suitable for welding</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">
+                <div class="application-icon">🏗️</div>
+                <h4>Structural Framework</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🚿</div>
+                <h4>Water Conveyance</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🏠</div>
+                <h4>Plumbing</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">⚙️</div>
+                <h4>Fabrication</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 5 -->
+    <div class="spec-modal" id="modal-stainless-steel-pipes">
+      <div class="modal-header">
+        <div class="container">
+          <div class="modal-title">
+            <h2>Stainless Steel Pipes (SS 202 / 304 / 316)</h2>
+          </div>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-details-grid">
+            <div class="spec-card">
+              <h3>Specifications</h3>
+              <ul class="spec-list">
+                <li><strong>Grades:</strong> SS 202, SS 304, SS 316</li>
+                <li><strong>Standards:</strong> ASTM A312 / A213</li>
+                <li><strong>Type:</strong> Seamless / Welded</li>
+                <li><strong>Finish:</strong> Polished / Matt / Mirror</li>
+                <li><strong>Size Range:</strong> ½" NB – 12" NB</li>
+              </ul>
+            </div>
+            <div class="spec-card">
+              <h3>Features</h3>
+              <ul class="spec-list">
+                <li>Corrosion and heat resistant</li>
+                <li>Hygienic and non-reactive</li>
+                <li>Excellent weldability</li>
+                <li>Attractive appearance</li>
+                <li>Long service life</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">
+                <div class="application-icon">🍽️</div>
+                <h4>Food Processing</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🧪</div>
+                <h4>Chemical Plants</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🏗️</div>
+                <h4>Architectural Structures</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">⚙️</div>
+                <h4>Industrial Piping</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 6 -->
+    <div class="spec-modal" id="modal-conduit-pipes">
+      <div class="modal-header">
+        <div class="container">
+          <div class="modal-title">
+            <h2>Conduit Pipes (GI Electrical Conduit)</h2>
+          </div>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-details-grid">
+            <div class="spec-card">
+              <h3>Specifications</h3>
+              <ul class="spec-list">
+                <li><strong>Standard:</strong> IS:9537</li>
+                <li><strong>Material:</strong> GI (Galvanized Iron)</li>
+                <li><strong>Types:</strong> Light / Medium / Heavy</li>
+                <li><strong>Size Range:</strong> 20mm to 50mm OD</li>
+                <li><strong>Finish:</strong> Silver HDG Coating</li>
+              </ul>
+            </div>
+            <div class="spec-card">
+              <h3>Features</h3>
+              <ul class="spec-list">
+                <li>Fire and corrosion resistant</li>
+                <li>Ensures electrical safety</li>
+                <li>Protects cables from impact</li>
+                <li>Durable in all environments</li>
+                <li>Easy to bend and install</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">
+                <div class="application-icon">🏢</div>
+                <h4>Commercial Buildings</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🏠</div>
+                <h4>Residential Wiring</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🏭</div>
+                <h4>Industrial Electricals</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">⚡</div>
+                <h4>Power Distribution</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 7 -->
+    <div class="spec-modal" id="modal-round-hollow-sections">
+      <div class="modal-header">
+        <div class="container">
+          <div class="modal-title"><h2>Round Hollow Sections (CHS)</h2></div>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-details-grid">
+            <div class="spec-card">
+              <h3>Specifications</h3>
+              <ul class="spec-list">
+                <li><strong>Standard:</strong> IS:4923 / EN 10210</li>
+                <li><strong>Size Range:</strong> 21.3mm – 406.4mm OD</li>
+                <li><strong>Thickness:</strong> 1.6mm – 12mm</li>
+                <li><strong>Length:</strong> 6m / 12m</li>
+                <li><strong>Finish:</strong> Black / Galvanized</li>
+              </ul>
+            </div>
+            <div class="spec-card">
+              <h3>Features</h3>
+              <ul class="spec-list">
+                <li>Uniform cross-section</li>
+                <li>High structural rigidity</li>
+                <li>Lightweight and strong</li>
+                <li>Easy fabrication</li>
+                <li>Weather resistant</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">
+                <div class="application-icon">🏗️</div>
+                <h4>Structural Framework</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🚧</div>
+                <h4>Bridges & Towers</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🏭</div>
+                <h4>Industrial Sheds</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">⚙️</div>
+                <h4>Fabrication</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 8 -->
+    <div class="spec-modal" id="modal-square-hollow-sections">
+      <div class="modal-header">
+        <div class="container">
+          <div class="modal-title"><h2>Square Hollow Sections (SHS)</h2></div>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-details-grid">
+            <div class="spec-card">
+              <h3>Specifications</h3>
+              <ul class="spec-list">
+                <li><strong>Standard:</strong> IS:4923 / EN 10219</li>
+                <li><strong>Size Range:</strong> 20x20mm – 250x250mm</li>
+                <li><strong>Thickness:</strong> 1.6mm – 12mm</li>
+                <li><strong>Length:</strong> 6m / 12m</li>
+                <li><strong>Finish:</strong> Black / Galvanized</li>
+              </ul>
+            </div>
+            <div class="spec-card">
+              <h3>Features</h3>
+              <ul class="spec-list">
+                <li>Excellent structural strength</li>
+                <li>Clean square geometry</li>
+                <li>Good weldability</li>
+                <li>Dimensional precision</li>
+                <li>Long-lasting finish</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">
+                <div class="application-icon">🏢</div>
+                <h4>Architectural Columns</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🏗️</div>
+                <h4>Fabricated Frames</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🏭</div>
+                <h4>Industrial Structures</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🚧</div>
+                <h4>Support Systems</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 9 -->
+    <div class="spec-modal" id="modal-rectangular-hollow-sections">
+      <div class="modal-header">
+        <div class="container">
+          <div class="modal-title">
+            <h2>Rectangular Hollow Sections (RHS)</h2>
+          </div>
+          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="spec-details-grid">
+            <div class="spec-card">
+              <h3>Specifications</h3>
+              <ul class="spec-list">
+                <li><strong>Standard:</strong> IS:4923 / EN 10219</li>
+                <li><strong>Size Range:</strong> 40x20mm – 400x200mm</li>
+                <li><strong>Thickness:</strong> 1.6mm – 12mm</li>
+                <li><strong>Length:</strong> 6m / 12m</li>
+                <li><strong>Finish:</strong> Black / Galvanized</li>
+              </ul>
+            </div>
+            <div class="spec-card">
+              <h3>Features</h3>
+              <ul class="spec-list">
+                <li>Excellent flexural strength</li>
+                <li>Lightweight yet strong</li>
+                <li>Uniform wall thickness</li>
+                <li>Corrosion resistant</li>
+                <li>Easy to weld and fabricate</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spec-card">
+            <h3>Applications</h3>
+            <div class="applications-grid">
+              <div class="application-item">
+                <div class="application-icon">🏗️</div>
+                <h4>Structural Frames</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🚧</div>
+                <h4>Trusses & Bridges</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">🏭</div>
+                <h4>Industrial Buildings</h4>
+              </div>
+              <div class="application-item">
+                <div class="application-icon">⚙️</div>
+                <h4>Fabrication Works</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3>About India Steel</h3>
+            <p>
+              Leading supplier of quality steel products in India. We provide
+              comprehensive steel solutions with international standard
+              compliance.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Product Categories</h3>
+            <ul>
+              <li><a href="#">Steel Pipes & Tubes</a></li>
+              <li><a href="#">Pipe Fittings</a></li>
+              <li><a href="#">Structural Steel</a></li>
+              <li><a href="#">Sheets & Plates</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Standards We Follow</h3>
+            <ul>
+              <li>ASTM Standards</li>
+              <li>API Specifications</li>
+              <li>IS Standards</li>
+              <li>BS Standards</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 India Steel Industries. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let currentModal = null;
+      let selectedCard = null;
+
+      function openSpec(specId, cardElement) {
+        if (currentModal) {
+          currentModal.classList.remove("active");
+        }
+        if (selectedCard) {
+          selectedCard.classList.remove("selected");
+        }
+        const modal = document.getElementById("modal-" + specId);
+        if (modal) {
+          modal.classList.add("active");
+          currentModal = modal;
+          document.body.style.overflow = "hidden";
+        }
+        cardElement.classList.add("selected");
+        selectedCard = cardElement;
+      }
+
+      function closeSpec() {
+        if (currentModal) {
+          currentModal.classList.remove("active");
+          currentModal = null;
+          document.body.style.overflow = "auto";
+        }
+        if (selectedCard) {
+          selectedCard.classList.remove("selected");
+          selectedCard = null;
+        }
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeSpec();
+        }
+      });
+    </script>
+  </body>
+</html>
