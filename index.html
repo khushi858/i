@@ -4,7 +4,1177 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>India Steel Industries - Quality Steel Products & Solutions</title>
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-blue: #0066cc;
+        --dark-blue: #003d7a;
+        --light-blue: #4da6ff;
+        --black: #000000;
+        --dark-gray: #1a1a1a;
+        --light-gray: #f5f5f5;
+        --white: #ffffff;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--black);
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Top Info Bar */
+      .top-info {
+        background: var(--dark-gray);
+        color: var(--white);
+        padding: 10px 0;
+        font-size: 14px;
+      }
+
+      .top-info .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .contact-top span {
+        margin-right: 30px;
+      }
+
+      .top-info a {
+        color: var(--white);
+        text-decoration: none;
+        margin-left: 20px;
+        transition: color 0.3s;
+      }
+
+      .top-info a:hover {
+        color: var(--light-blue);
+      }
+
+      /* Header */
+      header {
+        background: var(--white);
+        padding: 20px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        animation: slideDown 0.5s ease;
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .header-main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+      }
+
+      .logo-box {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--dark-blue)
+        );
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+      }
+
+      .logo-text h1 {
+        font-size: 24px;
+        color: var(--black);
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .logo-text p {
+        font-size: 12px;
+        color: var(--primary-blue);
+        font-weight: 500;
+      }
+
+      .header-contact {
+        text-align: right;
+      }
+
+      .header-contact .phone {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--primary-blue);
+      }
+
+      .header-contact .email {
+        font-size: 14px;
+        color: #666;
+      }
+
+      /* Navigation */
+      nav {
+        background: var(--dark-blue);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        list-style: none;
+        gap: 5px;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 18px 25px;
+        color: var(--white);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        transition: all 0.3s;
+        position: relative;
+      }
+
+      .nav-links li a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 3px;
+        background: var(--white);
+        transition: all 0.3s;
+        transform: translateX(-50%);
+      }
+
+      .nav-links li a:hover::before,
+      .nav-links li a.active::before {
+        width: 70%;
+      }
+
+      .nav-links li a:hover,
+      .nav-links li a.active {
+        background: var(--dark-blue);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        position: relative;
+        height: 100vh;
+        min-height: 700px;
+        overflow: hidden;
+      }
+
+      .hero-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.7) 0%,
+          rgba(0, 61, 122, 0.6) 100%
+        );
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--white);
+      }
+
+      .hero-content h2 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        line-height: 1.2;
+        animation: fadeInUp 1s ease 0.3s both;
+      }
+
+      .hero-content p {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+        max-width: 800px;
+        font-weight: 300;
+        animation: fadeInUp 1s ease 0.5s both;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+        animation: fadeInUp 1s ease 0.7s both;
+      }
+
+      .btn {
+        padding: 18px 40px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s;
+        cursor: pointer;
+        border: none;
+        letter-spacing: 1px;
+      }
+
+      .btn-primary {
+        background: var(--primary-blue);
+        color: var(--white);
+      }
+
+      .btn-primary:hover {
+        background: var(--white);
+        color: var(--primary-blue);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--white);
+        border: 2px solid var(--white);
+      }
+
+      .btn-secondary:hover {
+        background: var(--white);
+        color: var(--primary-blue);
+        transform: translateY(-3px);
+      }
+
+      /* Company Info Section */
+      .company-info {
+        padding: 100px 0;
+        background: var(--white);
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .about-text h2 {
+        font-size: 3rem;
+        color: var(--black);
+        margin-bottom: 30px;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 20px;
+      }
+
+      .about-text h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background: var(--primary-blue);
+      }
+
+      .about-text p {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 20px;
+        line-height: 1.8;
+      }
+
+      .stats-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .stat-item {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--dark-blue)
+        );
+        padding: 40px 30px;
+        text-align: center;
+        border-radius: 10px;
+        color: var(--white);
+        transition: all 0.3s;
+        box-shadow: 0 5px 20px rgba(0, 102, 204, 0.2);
+      }
+
+      .stat-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 102, 204, 0.4);
+      }
+
+      .stat-item h3 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .stat-item p {
+        font-size: 1.1rem;
+        font-weight: 300;
+      }
+
+      /* Parallax Sections */
+      .parallax-section {
+        position: relative;
+        height: 600px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .parallax-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 61, 122, 0.6)
+        );
+      }
+
+      .parallax-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: var(--white);
+        padding: 40px;
+      }
+
+      .parallax-content h2 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .parallax-content p {
+        font-size: 1.5rem;
+        font-weight: 300;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Products Section */
+      .products-section {
+        padding: 100px 0;
+        background: var(--light-gray);
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header h2 {
+        font-size: 3rem;
+        color: var(--black);
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .section-header p {
+        font-size: 1.2rem;
+        color: #666;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .product-card {
+        background: var(--white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s;
+        text-decoration: none;
+        color: var(--black);
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 102, 204, 0.3);
+      }
+
+      .product-img {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+
+      .product-card:hover .product-img img {
+        transform: scale(1.1);
+      }
+
+      .product-img::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+      }
+
+      .product-card h3 {
+        padding: 25px 25px 15px;
+        font-size: 1.5rem;
+        color: var(--black);
+        font-weight: 700;
+      }
+
+      .product-card p {
+        padding: 0 25px 20px;
+        color: #666;
+        font-size: 1rem;
+      }
+
+      .product-link {
+        padding: 0 25px 25px;
+        color: var(--primary-blue);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: gap 0.3s;
+      }
+
+      .product-card:hover .product-link {
+        gap: 15px;
+      }
+
+      /* Features Section */
+      .features-section {
+        padding: 100px 0;
+        background: var(--white);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .feature-item {
+        text-align: center;
+        padding: 40px 30px;
+        background: var(--light-gray);
+        border-radius: 10px;
+        transition: all 0.3s;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-10px);
+        background: var(--white);
+        box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--dark-blue)
+        );
+        color: var(--white);
+        font-size: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+      }
+
+      .feature-item h3 {
+        font-size: 1.5rem;
+        color: var(--black);
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .feature-item p {
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        padding: 100px 0;
+        background: var(--light-gray);
+      }
+
+      .faq-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .faq-category {
+        margin-bottom: 40px;
+      }
+
+      .faq-category-title {
+        font-size: 1.8rem;
+        color: var(--primary-blue);
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .faq-item {
+        background: var(--white);
+        margin-bottom: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+      }
+
+      .faq-item:hover {
+        box-shadow: 0 5px 20px rgba(0, 102, 204, 0.15);
+      }
+
+      .faq-question {
+        padding: 25px 30px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        color: var(--black);
+        font-size: 1.1rem;
+        transition: all 0.3s;
+      }
+
+      .faq-question:hover {
+        color: var(--primary-blue);
+      }
+
+      .faq-icon {
+        font-size: 1.5rem;
+        color: var(--primary-blue);
+        font-weight: 700;
+        transition: transform 0.3s;
+      }
+
+      .faq-item.active .faq-icon {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0 30px;
+        color: #666;
+        line-height: 1.8;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+        padding: 0 30px 25px;
+      }
+
+      /* ========== PREMIUM CONTACT SECTION ========== */
+      .contact-section-premium {
+        background: linear-gradient(135deg, #0a0a0a, #0f1c2e);
+        padding: 120px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Animated gradient circles */
+      .contact-section-premium::before,
+      .contact-section-premium::after {
+        content: "";
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.4;
+        animation: floatOrbs 8s ease-in-out infinite;
+      }
+
+      .contact-section-premium::before {
+        background: radial-gradient(circle, #0066ff, #0044cc);
+        top: -80px;
+        left: -100px;
+      }
+
+      .contact-section-premium::after {
+        background: radial-gradient(circle, #00ccff, #0088ff);
+        bottom: -80px;
+        right: -100px;
+        animation-delay: 4s;
+      }
+
+      @keyframes floatOrbs {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(30px, -30px) scale(1.1);
+        }
+      }
+
+      .contact-header {
+        text-align: center;
+        margin-bottom: 70px;
+        animation: fadeInDown 0.8s ease;
+      }
+
+      .contact-header h2 {
+        font-size: 3rem;
+        color: #fff;
+        font-weight: 700;
+        background: linear-gradient(135deg, #fff, #4da6ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .contact-header p {
+        color: #9fc6ff;
+        margin-top: 10px;
+        font-size: 1.2rem;
+      }
+
+      /* Layout Grid */
+      .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* LEFT INFO BOX */
+      .contact-info-box {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .info-card {
+        padding: 30px;
+        height: 220px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #fff;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .info-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .info-card:hover::before {
+        left: 100%;
+      }
+
+      .info-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        border-color: #4da6ff;
+        box-shadow: 0 20px 40px rgba(0, 102, 255, 0.4);
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .info-icon {
+        font-size: 2.8rem;
+        margin-bottom: 12px;
+        filter: drop-shadow(0 0 10px #4da6ff);
+        display: inline-block;
+        transition: transform 0.3s;
+      }
+
+      .info-card:hover .info-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .info-card h3 {
+        font-size: 1.3rem;
+        margin: 10px 0;
+        font-weight: 600;
+      }
+
+      .info-card p {
+        font-size: 1rem;
+        margin: 8px 0;
+        color: #b8d4ff;
+      }
+
+      .info-action {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+        color: #4da6ff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: gap 0.3s;
+      }
+
+      .info-card:hover .info-action {
+        gap: 12px;
+      }
+
+      /* Map styling */
+      .map-card {
+        padding: 15px;
+      }
+
+      .map-card iframe {
+        width: 100%;
+        height: 220px;
+        border: none;
+        border-radius: 12px;
+        filter: grayscale(50%);
+        transition: filter 0.3s;
+      }
+
+      .map-card:hover iframe {
+        filter: grayscale(0%);
+      }
+
+      /* ========== FORM ========== */
+      .contact-form-premium {
+        background: rgba(255, 255, 255, 0.07);
+        padding: 50px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+        color: #fff;
+        position: relative;
+      }
+
+      .contact-form-premium::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #0066ff, #00ccff, #0066ff);
+        background-size: 200% 100%;
+        animation: shimmer 3s linear infinite;
+        border-radius: 15px 15px 0 0;
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+
+      .contact-form-premium h3 {
+        font-size: 2rem;
+        margin-bottom: 35px;
+        font-weight: 700;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 25px;
+      }
+
+      /* Floating Label Input Style */
+      .input-wrapper {
+        position: relative;
+        flex: 1;
+      }
+
+      .input-wrapper input,
+      .input-wrapper select,
+      .input-wrapper textarea {
+        width: 100%;
+        padding: 18px 16px 12px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #fff;
+        font-size: 1rem;
+        transition: all 0.3s;
+        position: relative;
+      }
+
+      .input-wrapper label {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1rem;
+        pointer-events: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .input-wrapper input:focus,
+      .input-wrapper input:not(:placeholder-shown),
+      .input-wrapper select:focus,
+      .input-wrapper textarea:focus,
+      .input-wrapper textarea:not(:placeholder-shown) {
+        border-color: #4da6ff;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .input-wrapper input:focus ~ label,
+      .input-wrapper input:not(:placeholder-shown) ~ label,
+      .input-wrapper select:focus ~ label,
+      .input-wrapper textarea:focus ~ label,
+      .input-wrapper textarea:not(:placeholder-shown) ~ label {
+        top: 8px;
+        font-size: 0.75rem;
+        color: #4da6ff;
+      }
+
+      .input-wrapper textarea {
+        min-height: 100px;
+        resize: vertical;
+        padding-top: 25px;
+      }
+
+      .input-wrapper textarea ~ label {
+        top: 25px;
+        transform: translateY(0);
+      }
+
+      .input-wrapper textarea:focus ~ label,
+      .input-wrapper textarea:not(:placeholder-shown) ~ label {
+        top: 8px;
+      }
+
+      .input-border {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #0066ff, #00ccff);
+        transition: width 0.4s;
+        border-radius: 0 0 8px 8px;
+      }
+
+      .input-wrapper input:focus ~ .input-border,
+      .input-wrapper select:focus ~ .input-border,
+      .input-wrapper textarea:focus ~ .input-border {
+        width: 100%;
+      }
+
+      /* Select styling */
+      .input-wrapper select {
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234da6ff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        padding-right: 40px;
+      }
+
+      .input-wrapper select option {
+        background: #0f1c2e;
+        color: #fff;
+      }
+
+      /* Button */
+      .contact-btn {
+        width: 100%;
+        padding: 18px;
+        margin-top: 15px;
+        background: linear-gradient(135deg, #0066ff, #00ccff);
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.4s;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .contact-btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .contact-btn:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .contact-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 153, 255, 0.5);
+      }
+
+      .btn-text,
+      .btn-icon {
+        position: relative;
+        z-index: 1;
+      }
+
+      .btn-icon {
+        font-size: 1.5rem;
+        transition: transform 0.3s;
+      }
+
+      .contact-btn:hover .btn-icon {
+        transform: translateX(5px);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark-gray);
+        color: var(--white);
+        padding: 60px 0 0;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: var(--white);
+        font-weight: 700;
+      }
+
+      .footer-section p,
+      .footer-section ul li {
+        color: #ccc;
+        line-height: 1.8;
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .footer-section ul li a:hover {
+        color: var(--light-blue);
+        padding-left: 5px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #444;
+        padding: 30px 0;
+        text-align: center;
+        color: #888;
+      }
+
+      /* Scroll Animations */
+      .fade-item {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .info-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-content h2 {
+          font-size: 3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header-main {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .hero-content h2 {
+          font-size: 2rem;
+        }
+
+        .hero-content p {
+          font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+        }
+
+        .about-text h2,
+        .section-header h2 {
+          font-size: 2rem;
+        }
+
+        .parallax-section {
+          background-attachment: scroll;
+          height: 400px;
+        }
+
+        .parallax-content h2 {
+          font-size: 2rem;
+        }
+
+        .stats-box {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Top Info Bar -->
@@ -15,7 +1185,7 @@
           <span>📞 +91 22 4567 8900</span>
         </div>
         <div>
-          <a href="#quote">Get Quote</a>
+          <a href="#contact">Get Quote</a>
           <a href="#contact">Contact Us</a>
         </div>
       </div>
@@ -23,58 +1193,50 @@
 
     <!-- Header -->
     <header>
-      <div class="container">
-        <div class="header-main">
-          <div class="logo-section" onclick="window.location.href='index.html'">
-            <div class="logo-box">ISI</div>
-            <div class="logo-text">
-              <h1>INDIA STEEL INDUSTRIES</h1>
-              <p>Quality Steel Solutions Since 1998</p>
-            </div>
+      <div class="header-main">
+        <div class="logo-section" onclick="window.location.href='#home'">
+          <div class="logo-box">ISI</div>
+          <div class="logo-text">
+            <h1>INDIA STEEL INDUSTRIES</h1>
+            <p>Quality Steel Solutions Since 1998</p>
           </div>
-          <div class="header-contact">
-            <div class="phone">+91 22 4567 8900</div>
-            <div class="email">info@indiasteelind.com</div>
-          </div>
+        </div>
+        <div class="header-contact">
+          <div class="phone">+91 22 4567 8900</div>
+          <div class="email">info@indiasteelind.com</div>
         </div>
       </div>
     </header>
 
     <!-- Navigation -->
     <nav>
-      <div class="container">
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">HOME</a></li>
-          <li><a href="#about">ABOUT US</a></li>
-          <li><a href="#products">PRODUCTS</a></li>
-          <li><a href="#features">WHY CHOOSE US</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">HOME</a></li>
+        <li><a href="#about">ABOUT US</a></li>
+        <li><a href="#products">PRODUCTS</a></li>
+        <li><a href="#features">WHY CHOOSE US</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
     </nav>
 
-    <!-- Hero Slider with Video Background -->
-    <section class="slider" id="home">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
       <video class="hero-video" autoplay muted loop playsinline>
         <source
-          src="https://v.ftcdn.net/04/29/50/42/240_F_429504224_FP6yVjBTW7XLgTDQU1T4A8QJC26QSCsY_ST.mp4"
+          src="https://www.pexels.com/download/video/5121753/"
           type="video/mp4"
         />
       </video>
-
       <div class="hero-overlay"></div>
-
-      <div class="container">
-        <div class="hero-content">
-          <h2>Your Trusted Partner in Steel Trading & Fabrication Solutions</h2>
-          <p>
-            Supplying MS Pipes, Hollow Sections, Angles, and Custom Fabrication
-            across India and the Middle East.
-          </p>
-          <div class="hero-buttons">
-            <a href="#products" class="btn btn-primary">BROWSE CATALOG</a>
-            <a href="#contact" class="btn btn-secondary">REQUEST QUOTE</a>
-          </div>
+      <div class="hero-content">
+        <h2>Your Trusted Partner in Steel Trading & Fabrication Solutions</h2>
+        <p>
+          Supplying MS Pipes, Hollow Sections, Angles, and Custom Fabrication
+          across India and the Middle East.
+        </p>
+        <div class="hero-buttons">
+          <a href="#products" class="btn btn-primary">BROWSE CATALOG</a>
+          <a href="#contact" class="btn btn-secondary">REQUEST QUOTE</a>
         </div>
       </div>
     </section>
@@ -83,7 +1245,7 @@
     <section class="company-info" id="about">
       <div class="container">
         <div class="info-grid">
-          <div class="about-text">
+          <div class="about-text fade-item">
             <h2>Who We Are?</h2>
             <p>
               India Steel Industries constantly strives to produce & supply High
@@ -105,7 +1267,7 @@
               that partner you can trust.
             </p>
           </div>
-          <div class="stats-box">
+          <div class="stats-box fade-item">
             <div class="stat-item">
               <h3>25+</h3>
               <p>Years Experience</p>
@@ -127,18 +1289,33 @@
       </div>
     </section>
 
-    <!-- Product Showcase Section -->
-    <section class="bh-products-section" id="products">
+    <!-- Parallax Section 1 -->
+    <section
+      class="parallax-section"
+      style="
+        background-image: url('https://static.vecteezy.com/system/resources/thumbnails/033/059/743/small/high-quality-galvanized-steel-pipe-or-aluminum-and-chrome-stainless-steel-pipes-in-stack-ai-generated-image-photo.jpg');
+      "
+    >
+      <div class="parallax-overlay"></div>
+      <div class="parallax-content">
+        <h2>Precision Steel Fabrication</h2>
+        <p>
+          State-of-the-art machinery delivering excellence in every cut, bend,
+          and weld
+        </p>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
       <div class="container">
-        <div class="bh-section-header">
+        <div class="section-header">
           <h2>Our Steel Product Categories</h2>
           <p>Choose a category to explore specifications</p>
         </div>
-
-       <div class="bh-product-grid">
-          <!-- 1. Steel Pipes & Tubes -->
-          <a href="SteelPipes.html" class="bh-product-card fade-item">
-            <div class="bh-product-img">
+        <div class="product-grid">
+          <a href="SteelPipes.html" class="product-card fade-item">
+            <div class="product-img">
               <img
                 src="https://www.solitaire-overseas.com/blog/wp-content/uploads/2021/10/Stainless-Steel-Pipe-And-Tube.jpg"
                 alt="Steel Pipes & Tubes"
@@ -146,12 +1323,11 @@
             </div>
             <h3>Steel Pipes & Tubes</h3>
             <p>MS, GI, Seamless, ERW, SS, CHS, SHS & RHS sections</p>
-            <span class="bh-link">Explore Category →</span>
+            <span class="product-link">Explore Category →</span>
           </a>
 
-          <!-- 2. Pipe Fittings & Accessories -->
-          <a href="PipeFittings.html" class="bh-product-card fade-item">
-            <div class="bh-product-img">
+          <a href="PipeFittings.html" class="product-card fade-item">
+            <div class="product-img">
               <img
                 src="https://www.simplexfittings.com/blog/wp-content/uploads/2024/11/Pipe-Fittings-Used-in-Piping.jpg"
                 alt="Pipe Fittings"
@@ -159,38 +1335,35 @@
             </div>
             <h3>Pipe Fittings & Accessories</h3>
             <p>Nipples, elbows, tees, reducers, couplings, valves & flanges</p>
-            <span class="bh-link">Explore Category →</span>
+            <span class="product-link">Explore Category →</span>
           </a>
 
-          <!-- 3. Structural Steel Sections -->
-          <a href="StructuralSteel.html" class="bh-product-card fade-item">
-            <div class="bh-product-img">
+          <a href="StructuralSteel.html" class="product-card fade-item">
+            <div class="product-img">
               <img
                 src="https://www.montanstahl.com/wp-content/uploads/2017/06/Stainless-Steel-Structural-Section.jpg"
-                alt="Structural Steel Sections"
+                alt="Structural Steel"
               />
             </div>
             <h3>Structural Steel Sections</h3>
             <p>Angles, channels, beams, flats, rounds & TMT bars</p>
-            <span class="bh-link">Explore Category →</span>
+            <span class="product-link">Explore Category →</span>
           </a>
 
-          <!-- 4. Sheets, Plates & Coils -->
-          <a href="SheetsPlates.html" class="bh-product-card fade-item">
-            <div class="bh-product-img">
+          <a href="SheetsPlates.html" class="product-card fade-item">
+            <div class="product-img">
               <img
                 src="https://999piping.com/uploads/media/6245af4e2df1e-steel-sheets-plates-coils-supplier.jpg"
-                alt="Sheets, Plates & Coils"
+                alt="Sheets & Plates"
               />
             </div>
             <h3>Sheets, Plates & Coils</h3>
             <p>MS plates, GI sheets, SS sheets & chequered plates</p>
-            <span class="bh-link">Explore Category →</span>
+            <span class="product-link">Explore Category →</span>
           </a>
 
-          <!-- 5. Fabrication & Job Work -->
-          <a href="Fabrication.html" class="bh-product-card fade-item">
-            <div class="bh-product-img">
+          <a href="Fabrication.html" class="product-card fade-item">
+            <div class="product-img">
               <img
                 src="https://img500.exportersindia.com/product_images/bc-500/2024/7/4889015/heavy-fabrication-job-work-1721731632-7533324.jpeg"
                 alt="Fabrication Services"
@@ -198,62 +1371,74 @@
             </div>
             <h3>Fabrication & Job Work</h3>
             <p>Cutting, bending, welding, threading, galvanizing & more</p>
-            <span class="bh-link">Explore Category →</span>
+            <span class="product-link">Explore Category →</span>
           </a>
 
-          <!-- 6. Stainless Steel Products -->
-          <a href="StainlessSteel.html" class="bh-product-card fade-item">
-            <div class="bh-product-img">
+          <a href="StainlessSteel.html" class="product-card fade-item">
+            <div class="product-img">
               <img
                 src="https://cdn-ilcjahl.nitrocdn.com/rISTsRVCliZocmivdTDTSVrxrSNwkubX/assets/images/optimized/rev-d898fad/eagletube.com/wp-content/uploads/2015/07/Depositphotos_18849747_s-20151-300x300.jpg"
-                alt="Stainless Steel Products"
+                alt="Stainless Steel"
               />
             </div>
             <h3>Stainless Steel Products</h3>
             <p>SS pipes, SS fittings, sheets & plates</p>
-            <span class="bh-link">Explore Category →</span>
+            <span class="product-link">Explore Category →</span>
           </a>
 
-          <!-- 7. Hardware & Fasteners -->
-          <a href="Hardware.html" class="bh-product-card fade-item">
-            <div class="bh-product-img">
+          <a href="Hardware.html" class="product-card fade-item">
+            <div class="product-img">
               <img
                 src="https://grainger-prod.adobecqms.net/content/dam/grainger/gus/en/public/digital-tactics/know-how/hero/SS-KH_10-factors-to-consider-when-choosing-fasteners_KH-HRO.jpg"
-                alt="Hardware & Fasteners"
+                alt="Hardware"
               />
             </div>
             <h3>Hardware & Fasteners</h3>
             <p>Bolts, nuts, washers, rods & clamps</p>
-            <span class="bh-link">Explore Category →</span>
+            <span class="product-link">Explore Category →</span>
           </a>
 
-          <!-- 8. Valves & Instrumentation -->
-          <a href="Valves.html" class="bh-product-card fade-item">
-            <div class="bh-product-img">
+          <a href="Valves.html" class="product-card fade-item">
+            <div class="product-img">
               <img
                 src="https://www.savoypipinginc.com/img/instrumentation-tube-fittings.jpg"
-                alt="Valves & Instrumentation"
+                alt="Valves"
               />
             </div>
             <h3>Valves & Instrumentation</h3>
             <p>Ball, gate, globe, butterfly valves & gauges</p>
-            <span class="bh-link">Explore Category →</span>
+            <span class="product-link">Explore Category →</span>
           </a>
 
-          <!-- 9. Export / Bulk Packs -->
-          <a href="ExportBulk.html" class="bh-product-card fade-item">
-            <div class="bh-product-img">
+          <a href="ExportBulk.html" class="product-card fade-item">
+            <div class="product-img">
               <img
                 src="https://www.shutterstock.com/image-photo/warehouse-manager-box-stock-label-260nw-2451952719.jpg"
-                alt="Bulk Export Packaging"
+                alt="Export Bulk"
               />
             </div>
             <h3>Export / Bulk Packs</h3>
             <p>Packed crates, pallets & export-grade packaging</p>
-            <span class="bh-link">Explore Category →</span>
+            <span class="product-link">Explore Category →</span>
           </a>
         </div>
-        </div>
+      </div>
+    </section>
+
+    <!-- Parallax Section 2 -->
+    <section
+      class="parallax-section"
+      style="
+        background-image: url('https://media.istockphoto.com/id/1046590862/photo/large-silver-pipes-stacked-at-factory.jpg?s=612x612&w=0&k=20&c=hEEPljtqfVODUzEduNoBQ4Jh_TnYrj0ogt9FWIcNCh4=');
+      "
+    >
+      <div class="parallax-overlay"></div>
+      <div class="parallax-content">
+        <h2>Quality Steel Products</h2>
+        <p>
+          Comprehensive range of pipes, tubes, and structural steel meeting
+          international standards
+        </p>
       </div>
     </section>
 
@@ -265,302 +1450,27 @@
           <p>Your reliable partner for quality steel products</p>
         </div>
         <div class="features-grid">
-          <div class="feature-item">
+          <div class="feature-item fade-item">
             <div class="feature-icon">✓</div>
             <h3>ISO Certified</h3>
             <p>
               ISO 9001 certified ensuring consistent quality and reliability
             </p>
           </div>
-          <div class="feature-item">
+          <div class="feature-item fade-item">
             <div class="feature-icon">⚡</div>
             <h3>Fast Delivery</h3>
             <p>Prompt delivery with our efficient logistics network</p>
           </div>
-          <div class="feature-item">
+          <div class="feature-item fade-item">
             <div class="feature-icon">💰</div>
             <h3>Best Prices</h3>
             <p>Competitive pricing without compromising quality</p>
           </div>
-          <div class="feature-item">
+          <div class="feature-item fade-item">
             <div class="feature-icon">📦</div>
             <h3>Large Stock</h3>
             <p>Extensive inventory to meet immediate requirements</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Infrastructure Gallery -->
-    <section class="gallery-section" id="gallery">
-      <div class="container">
-        <div class="section-header">
-          <h2>Our Infrastructure</h2>
-          <p>State-of-the-art facilities equipped with modern machinery</p>
-        </div>
-        <div class="gallery-tabs">
-          <button class="tab-btn active" onclick="showGallery('factory')">
-            Factory
-          </button>
-          <button class="tab-btn" onclick="showGallery('machinery')">
-            Machinery
-          </button>
-          <button class="tab-btn" onclick="showGallery('production')">
-            Production Line
-          </button>
-        </div>
-        <div class="gallery-grid" id="factory" style="display: grid">
-          <div class="gallery-item">
-            <img
-              src="https://www.metaltree.in/wp-content/uploads/2025/07/Aerial-view-of-a-factory-building-with-blue-roofs_-showcasing-a-pre-engineered-building-manufacturin.webp"
-              alt="Steel Factory Building"
-              class="gallery-img-real"
-            />
-            <h4>Main Factory Building</h4>
-            <p>50,000 sq ft facility with modern infrastructure</p>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="https://marvel-b1-cdn.bc0a.com/f00000000236353/storage-solutions.com/wp-content/uploads/2024/09/Background-Racking-warehouse-equipment_MAM-55801-scaled.jpg"
-              alt="Storage Warehouse"
-              class="gallery-img-real"
-            />
-            <h4>Storage Warehouse</h4>
-            <p>Climate-controlled storage for premium steel products</p>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800"
-              alt="Steel Inventory"
-              class="gallery-img-real"
-            />
-            <h4>Steel Inventory</h4>
-            <p>Large stock of various steel products ready for delivery</p>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800"
-              alt="Loading Bay"
-              class="gallery-img-real"
-            />
-            <h4>Loading Bay</h4>
-            <p>Efficient loading docks for quick dispatch</p>
-          </div>
-        </div>
-        <div class="gallery-grid" id="machinery" style="display: none">
-          <div class="gallery-item">
-            <img
-              src="https://images.jdmagicbox.com/quickquotes/images_main/cnc-plasma-cutting-machine-383444052-yz29m.jpg"
-              alt="CNC Cutting Machine"
-              class="gallery-img-real"
-            />
-            <h4>CNC Cutting Machine</h4>
-            <p>High-precision cutting for custom specifications</p>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
-              alt="Metal Bending Equipment"
-              class="gallery-img-real"
-            />
-            <h4>Bending Equipment</h4>
-            <p>Advanced machinery for steel fabrication</p>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800"
-              alt="Testing Laboratory"
-              class="gallery-img-real"
-            />
-            <h4>Testing Laboratory</h4>
-            <p>Quality control and material testing facility</p>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800"
-              alt="Welding Stations"
-              class="gallery-img-real"
-            />
-            <h4>Welding Stations</h4>
-            <p>Modern welding equipment for steel fabrication</p>
-          </div>
-        </div>
-        <div class="gallery-grid" id="production" style="display: none">
-          <div class="gallery-item">
-            <img
-              src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800"
-              alt="Heat Treatment"
-              class="gallery-img-real"
-            />
-            <h4>Heat Treatment</h4>
-            <p>Advanced heat treatment for TMT bars</p>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="https://www.market-prospects.com/storage/images/1200%E9%A7%BF%E6%9A%90-4%E9%BB%9E106004873_m.png"
-              alt="Cutting Process"
-              class="gallery-img-real"
-            />
-            <h4>Cutting & Shaping</h4>
-            <p>Precision cutting to customer requirements</p>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=800"
-              alt="Quality Inspection"
-              class="gallery-img-real"
-            />
-            <h4>Quality Inspection</h4>
-            <p>Rigorous quality checks at every stage</p>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800"
-              alt="Packaging Unit"
-              class="gallery-img-real"
-            />
-            <h4>Packaging Unit</h4>
-            <p>Professional packaging for safe delivery</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Client Testimonials -->
-    <section class="testimonials-section" id="testimonials">
-      <div class="container">
-        <div class="section-header">
-          <h2>Client Testimonials</h2>
-          <p>What our valued clients say about us</p>
-        </div>
-
-        <!-- Reviews -->
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">
-              "India Steel Industries has been our trusted partner for over 5
-              years. Their quality is unmatched and delivery is always on time.
-              Highly recommended for any construction project!"
-            </p>
-            <div class="client-info">
-              <div class="client-avatar">RG</div>
-              <div>
-                <h4>Rajesh Gupta</h4>
-                <p>CEO, Gupta Construction Ltd.</p>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">
-              "Excellent service and competitive pricing. The team is very
-              professional and helped us find the exact specifications we needed
-              for our industrial project."
-            </p>
-            <div class="client-info">
-              <div class="client-avatar">SK</div>
-              <div>
-                <h4>Suresh Kumar</h4>
-                <p>Project Manager, Kumar Infrastructure</p>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">
-              "Their ISO certification and quality assurance process gives us
-              complete confidence. We've never had any issues with the products
-              supplied by India Steel."
-            </p>
-            <div class="client-info">
-              <div class="client-avatar">AP</div>
-              <div>
-                <h4>Amit Patel</h4>
-                <p>Director, Patel Trading Company</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case Studies -->
-        <div class="case-studies">
-          <h3 class="subsection-title">Success Stories & Case Studies</h3>
-          <div class="case-study-grid">
-            <div class="case-study-card">
-              <div class="case-study-header">
-                <span class="case-badge">Construction</span>
-                <h4>Mumbai Metro Project</h4>
-              </div>
-              <p class="case-description">
-                Supplied 2,500 tons of TMT bars and structural steel for metro
-                station construction. Project completed 2 weeks ahead of
-                schedule with zero material defects.
-              </p>
-              <div class="case-stats">
-                <div class="stat">
-                  <strong>2,500</strong>
-                  <span>Tons Supplied</span>
-                </div>
-                <div class="stat">
-                  <strong>100%</strong>
-                  <span>Quality Rate</span>
-                </div>
-                <div class="stat">
-                  <strong>-2 weeks</strong>
-                  <span>Early Delivery</span>
-                </div>
-              </div>
-            </div>
-            <div class="case-study-card">
-              <div class="case-study-header">
-                <span class="case-badge">Industrial</span>
-                <h4>Pune Manufacturing Hub</h4>
-              </div>
-              <p class="case-description">
-                Complete steel solution for a 100,000 sq ft manufacturing
-                facility including beams, channels, and pipes. Custom cutting
-                and fabrication services provided.
-              </p>
-              <div class="case-stats">
-                <div class="stat">
-                  <strong>1,800</strong>
-                  <span>Tons Delivered</span>
-                </div>
-                <div class="stat">
-                  <strong>15</strong>
-                  <span>Days Timeline</span>
-                </div>
-                <div class="stat">
-                  <strong>100%</strong>
-                  <span>Client Satisfaction</span>
-                </div>
-              </div>
-            </div>
-            <div class="case-study-card">
-              <div class="case-study-header">
-                <span class="case-badge">Infrastructure</span>
-                <h4>Delhi Highway Bridge</h4>
-              </div>
-              <p class="case-description">
-                Supplied high-grade steel pipes and structural components for
-                highway bridge construction. Strict quality controls and timely
-                delivery maintained throughout.
-              </p>
-              <div class="case-stats">
-                <div class="stat">
-                  <strong>3,200</strong>
-                  <span>Tons Supplied</span>
-                </div>
-                <div class="stat">
-                  <strong>6 months</strong>
-                  <span>Project Duration</span>
-                </div>
-                <div class="stat">
-                  <strong>Zero</strong>
-                  <span>Delays</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -643,17 +1553,6 @@
                 and logistics to ensure smooth delivery to your location.
               </div>
             </div>
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                <span>How do you ensure safe delivery of steel products?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                All products are professionally packaged and secured for
-                transport. We use specialized vehicles equipped for steel
-                transportation and provide cargo insurance for all deliveries.
-              </div>
-            </div>
           </div>
 
           <div class="faq-category">
@@ -672,17 +1571,6 @@
             </div>
             <div class="faq-item">
               <div class="faq-question" onclick="toggleFaq(this)">
-                <span>What payment methods do you accept?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                We accept bank transfers, letters of credit (LC), cheques, and
-                cash payments. For regular clients, we offer credit terms based
-                on business relationship and order volume.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
                 <span>Do you offer bulk discounts?</span>
                 <span class="faq-icon">+</span>
               </div>
@@ -693,161 +1581,98 @@
               </div>
             </div>
           </div>
-
-          <div class="faq-category">
-            <h3 class="faq-category-title">Quality Assurance</h3>
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                <span>Are you ISO certified?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                Yes, we are ISO 9001:2015 certified. Our quality management
-                system ensures consistent product quality and service excellence
-                across all operations.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                <span>Do you provide mill test certificates?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                Yes, all our products come with original mill test certificates
-                (MTC) showing chemical composition, mechanical properties, and
-                compliance with specified standards.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                <span>How do you ensure product quality?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                We source from certified manufacturers, conduct incoming quality
-                inspections, perform random testing in our laboratory, and
-                maintain strict storage conditions. Every product undergoes
-                quality checks before dispatch.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-category">
-            <h3 class="faq-category-title">Returns & Warranty</h3>
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                <span>What is your return policy?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                Returns are accepted within 7 days of delivery if products are
-                found to be defective or not as per specifications. Products
-                must be unused, in original packaging, and accompanied by
-                original invoice and MTC.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                <span>Do you provide warranty on your products?</span>
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                We provide manufacturer's warranty against material defects.
-                Warranty terms vary by product type. GI products typically have
-                anti-rust warranty, while structural steel has warranty against
-                manufacturing defects.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                <span
-                  >What if the delivered product doesn't match
-                  specifications?</span
-                >
-                <span class="faq-icon">+</span>
-              </div>
-              <div class="faq-answer">
-                If delivered products don't match the agreed specifications, we
-                will immediately arrange replacement at no additional cost. We
-                stand behind the quality of our products 100%.
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
+    <!-- ========== PREMIUM CONTACT SECTION ========== -->
+    <section class="contact-section-premium" id="contact">
       <div class="container">
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h2>Get In Touch</h2>
-            <div class="contact-item">
-              <div class="contact-icon">📍</div>
-              <div>
-                <strong>Head Office</strong><br />
-                Plot No. 45, MIDC Industrial Area<br />
-                Andheri East, Mumbai - 400093, Maharashtra, India
-              </div>
+        <div class="contact-header">
+          <h2>Get In Touch</h2>
+        </div>
+
+        <div class="contact-wrapper">
+          <!-- LEFT : CONTACT INFO -->
+          <div class="contact-info-box">
+            <div class="info-card" data-tilt>
+              <div class="info-icon">📞</div>
+              <h3>Call Us</h3>
+              <p>+91 98201 23456</p>
+              <a href="tel:+919820123456" class="info-action">Call Now →</a>
             </div>
-            <div class="contact-item">
-              <div class="contact-icon">📞</div>
-              <div>
-                <strong>Phone</strong><br />
-                +91 22 4567 8900<br />
-                +91 22 4567 8901
-              </div>
+
+            <div class="info-card" data-tilt>
+              <div class="info-icon">📧</div>
+              <h3>Email</h3>
+              <p>sales@indiasteelindustries.com</p>
+              <a
+                href="mailto:sales@indiasteelindustries.com"
+                class="info-action"
+                >Send Email →</a
+              >
             </div>
-            <div class="contact-item">
-              <div class="contact-icon">📧</div>
-              <div>
-                <strong>Email</strong><br />
-                info@indiasteelind.com<br />
-                sales@indiasteelind.com
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon">🕒</div>
-              <div>
-                <strong>Working Hours</strong><br />
-                Monday - Saturday: 9:00 AM - 7:00 PM<br />
-                Sunday: Closed
-              </div>
+
+            <div class="info-card" data-tilt>
+              <div class="info-icon">📍</div>
+              <h3>Location</h3>
+              <p>TTC Industrial Area, MIDC, Mumbai</p>
+              <a
+                href="https://maps.google.com"
+                target="_blank"
+                class="info-action"
+                >Get Directions →</a
+              >
             </div>
           </div>
-          <div class="contact-form">
-            <h3>Request a Quote</h3>
-            <form>
-              <div class="form-group">
-                <label>Name *</label>
-                <input type="text" required />
+
+          <!-- RIGHT : FORM -->
+          <div class="contact-form-premium">
+            <h3>Send us a message</h3>
+
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="input-wrapper">
+                  <input type="text" id="name" placeholder=" " required />
+                  <label for="name">Your Name *</label>
+                  <span class="input-border"></span>
+                </div>
+                <div class="input-wrapper">
+                  <input type="email" id="email" placeholder=" " required />
+                  <label for="email">Your Email *</label>
+                  <span class="input-border"></span>
+                </div>
               </div>
-              <div class="form-group">
-                <label>Email *</label>
-                <input type="email" required />
+
+              <div class="form-row">
+                <div class="input-wrapper">
+                  <input type="tel" id="phone" placeholder=" " />
+                  <label for="phone">Phone Number</label>
+                  <span class="input-border"></span>
+                </div>
+                <div class="input-wrapper">
+                  <select id="category" required>
+                    <option value="">Select Product Category *</option>
+                    <option>Sheets & Plates</option>
+                    <option>Structural Steel</option>
+                    <option>Pipes & Tubes</option>
+                    <option>Hardware & Fasteners</option>
+                    <option>Valves & Fittings</option>
+                  </select>
+                  <span class="input-border"></span>
+                </div>
               </div>
-              <div class="form-group">
-                <label>Phone *</label>
-                <input type="tel" required />
+
+              <div class="input-wrapper">
+                <textarea id="message" placeholder=" " required></textarea>
+                <label for="message">Write your message *</label>
+                <span class="input-border"></span>
               </div>
-              <div class="form-group">
-                <label>Product Interest</label>
-                <select>
-                  <option>Select Product</option>
-                  <option>MS Angles</option>
-                  <option>MS Channels</option>
-                  <option>I Beams</option>
-                  <option>Steel Plates</option>
-                  <option>Steel Pipes</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Message *</label>
-                <textarea required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width: 100%">
-                Submit Request
+
+              <button type="submit" class="contact-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-icon">→</span>
               </button>
             </form>
           </div>
@@ -870,7 +1695,7 @@
           <div class="footer-section">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="index.html">Home</a></li>
+              <li><a href="#home">Home</a></li>
               <li><a href="#about">About Us</a></li>
               <li><a href="#products">Products</a></li>
               <li><a href="#features">Why Choose Us</a></li>
@@ -880,11 +1705,11 @@
           <div class="footer-section">
             <h3>Product Categories</h3>
             <ul>
-              <li><a href="ms-angles.html">MS Angles</a></li>
-              <li><a href="ms-channels.html">MS Channels</a></li>
-              <li><a href="ms-beams.html">MS Beams</a></li>
-              <li><a href="plates-sheets.html">Plates & Sheets</a></li>
-              <li><a href="pipes-tubes.html">Pipes & Tubes</a></li>
+              <li><a href="#">Steel Pipes & Tubes</a></li>
+              <li><a href="#">Structural Steel</a></li>
+              <li><a href="#">Sheets & Plates</a></li>
+              <li><a href="#">Pipe Fittings</a></li>
+              <li><a href="#">Fabrication Services</a></li>
             </ul>
           </div>
           <div class="footer-section">
@@ -907,19 +1732,99 @@
       </div>
     </footer>
 
-    <script src="products.js"></script>
     <script>
+      // Scroll Animation Observer
       const fadeElements = document.querySelectorAll(".fade-item");
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        }
+      );
+
+      fadeElements.forEach((el) => observer.observe(el));
+
+      // FAQ Toggle Function
+      function toggleFaq(element) {
+        const faqItem = element.parentElement;
+        const answer = faqItem.querySelector(".faq-answer");
+        const icon = element.querySelector(".faq-icon");
+
+        // Close other FAQs
+        document.querySelectorAll(".faq-item").forEach((item) => {
+          if (item !== faqItem && item.classList.contains("active")) {
+            item.classList.remove("active");
+            item.querySelector(".faq-icon").textContent = "+";
+          }
+        });
+
+        faqItem.classList.toggle("active");
+
+        if (faqItem.classList.contains("active")) {
+          icon.textContent = "−";
+        } else {
+          icon.textContent = "+";
+        }
+      }
+
+      // Smooth Scroll for Navigation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
           }
         });
       });
 
-      fadeElements.forEach((el) => observer.observe(el));
+      // Active Nav Link on Scroll
+      window.addEventListener("scroll", () => {
+        let current = "";
+        const sections = document.querySelectorAll("section[id]");
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Header Scroll Effect
+      let lastScroll = 0;
+      const header = document.querySelector("header");
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+          header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.15)";
+        } else {
+          header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+        }
+
+        lastScroll = currentScroll;
+      });
     </script>
   </body>
 </html>
