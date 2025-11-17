@@ -5,327 +5,632 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Structural Steel Sections - India Steel Industries</title>
     <style>
-      /* ========== BASE STYLES ========== */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: #333;
-      }
-      .container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* HEADER / NAV */
-      .top-info {
-        background: #003366;
-        color: white;
-        padding: 10px 0;
-        font-size: 14px;
-      }
-      .top-info .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .contact-top {
-        display: flex;
-        gap: 30px;
-      }
-      .top-info a {
-        color: white;
-        text-decoration: none;
-        margin-left: 20px;
-      }
-      header {
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-      }
-      .header-main {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .logo-section {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-      .logo-box {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 20px;
-        border-radius: 10px;
-      }
-      .logo-text h1 {
-        font-size: 24px;
-        color: #003366;
-      }
-      .logo-text p {
-        font-size: 12px;
-        color: #666;
-      }
-
-      nav {
-        background: linear-gradient(135deg, #003366, #0055aa);
-      }
-      .nav-links {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-      }
-      .nav-links li a {
-        color: white;
-        text-decoration: none;
-        padding: 18px 30px;
-        display: block;
-        font-weight: 600;
-        transition: all 0.3s;
-      }
-      .nav-links li a:hover,
-      .nav-links li a.active {
-        background: rgba(255, 255, 255, 0.2);
-      }
-
-      /* BREADCRUMB / HERO */
-      .breadcrumb {
-        background: #f5f5f5;
-        padding: 15px 0;
-      }
-      .breadcrumb-list {
-        list-style: none;
-        display: flex;
-        gap: 10px;
-      }
-      .breadcrumb-list a {
-        color: #003366;
-        text-decoration: none;
-      }
-      .hero-slider {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
-        text-align: center;
-        padding: 60px 0;
-      }
-      .hero-content h2 {
-        font-size: 42px;
-        margin-bottom: 10px;
-      }
-
-      /* CATEGORY SECTION */
-      .category-section {
-        padding: 60px 0;
-        background: #f9f9f9;
-      }
-      .section-title {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-      .section-title h2 {
-        font-size: 36px;
-        color: #003366;
-      }
-      .category-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        margin-bottom: 40px;
-      }
-
-      .category-card img.card-img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-      }
-
-      .category-card {
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        line-height: 1.7;
+        color: #1a1a1a;
         background: #fff;
       }
 
-      .category-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      .top-bar {
+        background: #0a0a0a;
+        color: #fff;
+        padding: 12px 0;
+        font-size: 13px;
+        border-bottom: 1px solid #222;
       }
 
-      .category-card.selected {
-        border-color: #ffd700;
-        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
-      }
-      .card-icon {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
-        text-align: center;
-        font-size: 50px;
-        padding: 40px;
-      }
-      .card-content {
-        text-align: center;
-        padding: 25px;
-      }
-      .card-content h3 {
-        color: #003366;
-        font-size: 20px;
-        margin-bottom: 10px;
+      .top-bar .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
 
-      /* MODALS */
-      .spec-modal {
+      .top-bar-left {
+        display: flex;
+        gap: 35px;
+        align-items: center;
+      }
+
+      .top-bar-left span {
+        opacity: 0.9;
+        letter-spacing: 0.3px;
+      }
+
+      .top-bar-right a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 30px;
+        font-weight: 500;
+        transition: color 0.3s;
+        letter-spacing: 0.5px;
+      }
+
+      .top-bar-right a:hover {
+        color: #3b82f6;
+      }
+
+      header {
+        background: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 25px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .logo-icon {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        font-weight: 800;
+        font-size: 22px;
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      }
+
+      .logo-text h1 {
+        font-size: 26px;
+        font-weight: 800;
+        color: #0a0a0a;
+        letter-spacing: -0.5px;
+      }
+
+      .logo-text p {
+        font-size: 11px;
+        color: #666;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 5px;
+      }
+
+      nav ul li a {
+        color: #1a1a1a;
+        text-decoration: none;
+        padding: 12px 24px;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        transition: all 0.3s;
+        border-radius: 8px;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        background: #3b82f6;
+        color: #fff;
+      }
+
+      .breadcrumb {
+        background: #fafafa;
+        padding: 18px 0;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      .breadcrumb-nav {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-size: 13px;
+      }
+
+      .breadcrumb-nav a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 500;
+      }
+
+      .breadcrumb-nav a:hover {
+        color: #3b82f6;
+      }
+
+      .breadcrumb-nav span {
+        color: #0a0a0a;
+        font-weight: 600;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        padding: 100px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path fill="%233b82f6" fill-opacity="0.05" d="M0,0 L1200,0 L1200,60 Q900,120 600,60 T0,60 Z"/></svg>');
+        background-size: cover;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero h2 {
+        font-size: 56px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        color: #ccc;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      .filter-section {
+        background: #fafafa;
+        padding: 30px 0;
+        border-bottom: 1px solid #e5e5e5;
+        position: sticky;
+        top: 86px;
+        z-index: 99;
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .filter-label {
+        font-weight: 700;
+        color: #0a0a0a;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .filter-buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        flex: 1;
+      }
+
+      .filter-btn {
+        background: #fff;
+        border: 2px solid #e5e5e5;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: #666;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .filter-btn:hover {
+        border-color: #3b82f6;
+        color: #3b82f6;
+        background: #eff6ff;
+      }
+
+      .filter-btn.active {
+        background: #3b82f6;
+        color: #fff;
+        border-color: #3b82f6;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border: 2px solid #e5e5e5;
+        border-radius: 50px;
+        padding: 8px 20px;
+        min-width: 250px;
+        transition: border-color 0.3s;
+      }
+
+      .search-box:focus-within {
+        border-color: #3b82f6;
+      }
+
+      .search-box input {
+        border: none;
+        outline: none;
+        padding: 6px 10px;
+        font-size: 14px;
+        width: 100%;
+      }
+
+      .search-box span {
+        color: #999;
+      }
+
+      .category-section {
+        padding: 80px 0;
+        background: #fff;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header h2 {
+        font-size: 42px;
+        font-weight: 800;
+        color: #0a0a0a;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+      }
+
+      .section-header p {
+        font-size: 16px;
+        color: #666;
+        font-weight: 500;
+      }
+
+      .results-count {
+        color: #666;
+        font-size: 15px;
+        margin-bottom: 30px;
+        font-weight: 500;
+      }
+
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+      }
+
+      .category-item {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        border: 2px solid transparent;
+      }
+
+      .category-item:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        border-color: #3b82f6;
+      }
+
+      .category-item.selected {
+        border-color: #3b82f6;
+        box-shadow: 0 20px 60px rgba(59, 130, 246, 0.25);
+      }
+
+      .category-item.hidden {
+        display: none;
+      }
+
+      .category-image {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+
+      .category-item:hover .category-image {
+        transform: scale(1.05);
+      }
+
+      .category-info {
+        padding: 35px;
+      }
+
+      .category-badge {
+        display: inline-block;
+        background: #3b82f6;
+        color: #fff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .category-info h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #0a0a0a;
+        margin-bottom: 12px;
+        letter-spacing: -0.3px;
+      }
+
+      .category-info p {
+        font-size: 15px;
+        color: #666;
+        line-height: 1.7;
+      }
+
+      .modal {
         display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: white;
-        z-index: 9999;
+        background: #fff;
+        z-index: 1000;
         overflow-y: auto;
-        animation: slideIn 0.4s ease;
+        animation: fadeInModal 0.3s ease;
       }
-      .spec-modal.active {
+
+      .modal.active {
         display: block;
       }
-      @keyframes slideIn {
+
+      @keyframes fadeInModal {
         from {
           opacity: 0;
-          transform: translateY(30px);
         }
         to {
           opacity: 1;
-          transform: translateY(0);
         }
       }
+
       .modal-header {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
-        padding: 30px 0;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        padding: 40px 0;
         position: sticky;
         top: 0;
         z-index: 10;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       }
+
       .modal-header .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-      .close-btn {
-        background: white;
-        color: #003366;
+
+      .modal-header h2 {
+        font-size: 36px;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.5px;
+      }
+
+      .close-button {
+        background: #3b82f6;
+        color: #fff;
         border: none;
-        padding: 10px 25px;
-        border-radius: 25px;
-        font-weight: bold;
+        padding: 14px 32px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 14px;
         cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 0.5px;
       }
-      .modal-body {
-        padding: 60px 0;
+
+      .close-button:hover {
+        background: #2563eb;
+        transform: scale(1.05);
       }
-      .spec-card {
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+      .modal-content {
+        padding: 80px 0;
+      }
+
+      .spec-box {
+        background: #fafafa;
+        border-radius: 20px;
+        padding: 45px;
         margin-bottom: 40px;
+        border: 1px solid #e5e5e5;
       }
-      .spec-card h3 {
-        color: #003366;
-        border-bottom: 3px solid #ffd700;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
+
+      .spec-box h3 {
+        font-size: 28px;
+        font-weight: 800;
+        color: #0a0a0a;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #3b82f6;
+        letter-spacing: -0.3px;
       }
-      .spec-list {
+
+      .spec-box ul {
         list-style: none;
-        padding-left: 0;
       }
-      .spec-list li {
-        padding: 10px 0;
-        border-bottom: 1px solid #eee;
+
+      .spec-box ul li {
+        padding: 14px 0;
+        color: #333;
+        font-size: 16px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-left: 30px;
+        position: relative;
       }
-      .spec-list li:before {
-        content: "✓ ";
-        color: #003366;
+
+      .spec-box ul li:before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: #3b82f6;
         font-weight: bold;
-        margin-right: 10px;
+        font-size: 18px;
       }
+
+      .spec-box ul li:last-child {
+        border-bottom: none;
+      }
+
       .applications-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
       }
-      .application-item {
+
+      .app-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px 20px;
         text-align: center;
-        background: #f7f7f7;
-        border-radius: 12px;
-        padding: 20px;
-        font-size: 14px;
+        border: 2px solid #e5e5e5;
+        transition: all 0.3s;
+        font-size: 15px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .app-card:hover {
+        border-color: #3b82f6;
+        background: #eff6ff;
+        transform: translateY(-5px);
       }
 
       footer {
-        background: #1a1a1a;
-        color: white;
-        padding: 50px 0 20px;
+        background: #0a0a0a;
+        color: #ccc;
+        padding: 80px 0 30px;
       }
+
       .footer-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-        margin-bottom: 30px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 60px;
+        margin-bottom: 50px;
       }
-      .footer-section h3 {
-        color: #ffd700;
-        margin-bottom: 20px;
+
+      .footer-col h3 {
+        color: #3b82f6;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        letter-spacing: 0.5px;
       }
-      .footer-section ul {
+
+      .footer-col p {
+        font-size: 14px;
+        line-height: 1.8;
+        color: #999;
+      }
+
+      .footer-col ul {
         list-style: none;
       }
-      .footer-section ul li {
-        margin-bottom: 10px;
+
+      .footer-col ul li {
+        margin-bottom: 12px;
       }
-      .footer-section a {
-        color: #ccc;
+
+      .footer-col ul li a {
+        color: #999;
         text-decoration: none;
+        font-size: 14px;
         transition: color 0.3s;
       }
-      .footer-section a:hover {
-        color: #ffd700;
+
+      .footer-col ul li a:hover {
+        color: #3b82f6;
       }
+
       .footer-bottom {
         text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid #333;
-        color: #999;
+        padding-top: 40px;
+        border-top: 1px solid #222;
+        color: #666;
+        font-size: 13px;
+      }
+
+      @media (max-width: 1024px) {
+        .category-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .applications-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .category-grid,
+        .applications-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero h2 {
+          font-size: 36px;
+        }
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .filter-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .search-box {
+          width: 100%;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- HEADER -->
-    <div class="top-info">
+    <div class="top-bar">
       <div class="container">
-        <div class="contact-top">
+        <div class="top-bar-left">
           <span>📧 info@indiasteelind.com</span>
           <span>📞 +91 22 4567 8900</span>
         </div>
-        <div>
+        <div class="top-bar-right">
           <a href="#">Get Quote</a>
           <a href="#">Contact Us</a>
         </div>
@@ -333,43 +638,40 @@
     </div>
 
     <header>
-      <div class="container header-main">
-        <div class="logo-section">
-          <div class="logo-box">ISI</div>
-          <div class="logo-text">
-            <h1>INDIA STEEL INDUSTRIES</h1>
-            <p>Quality Steel Solutions Since 1998</p>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-section">
+            <div class="logo-icon">ISI</div>
+            <div class="logo-text">
+              <h1>INDIA STEEL INDUSTRIES</h1>
+              <p>Quality Steel Solutions Since 1998</p>
+            </div>
           </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="index.html#products" class="active">Products</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
 
-    <nav>
-      <div class="container">
-        <ul class="nav-links">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="index.html#about">ABOUT US</a></li>
-          <li><a href="index.html#products" class="active">PRODUCTS</a></li>
-          <li><a href="index.html#contact">CONTACT</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- BREADCRUMB -->
     <section class="breadcrumb">
       <div class="container">
-        <ul class="breadcrumb-list">
-          <li><a href="index.html">Home</a></li>
-          <li>›</li>
-          <li><a href="index.html#products">Products</a></li>
-          <li>›</li>
-          <li><span>Structural Steel Sections</span></li>
-        </ul>
+        <div class="breadcrumb-nav">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="index.html#products">Products</a>
+          <span>›</span>
+          <span>Structural Steel Sections</span>
+        </div>
       </div>
     </section>
 
-    <!-- HERO -->
-    <section class="hero-slider">
+    <section class="hero">
       <div class="container">
         <div class="hero-content">
           <h2>🏗️ Structural Steel Sections</h2>
@@ -381,82 +683,162 @@
       </div>
     </section>
 
-    <!-- CATEGORY SECTION -->
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-container">
+          <span class="filter-label">Filter By:</span>
+          <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterProducts('all')">
+              All Products
+            </button>
+            <button class="filter-btn" onclick="filterProducts('angles')">
+              Angles
+            </button>
+            <button class="filter-btn" onclick="filterProducts('channels')">
+              Channels
+            </button>
+            <button class="filter-btn" onclick="filterProducts('beams')">
+              Beams
+            </button>
+            <button class="filter-btn" onclick="filterProducts('bars')">
+              Bars
+            </button>
+            <button class="filter-btn" onclick="filterProducts('tmt')">
+              TMT Bars
+            </button>
+            <button class="filter-btn" onclick="filterProducts('chequered')">
+              Chequered Plates
+            </button>
+          </div>
+          <div class="search-box">
+            <span>🔍</span>
+            <input
+              type="text"
+              placeholder="Search products..."
+              oninput="searchProducts(this.value)"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="category-section">
       <div class="container">
-        <div class="section-title">
-          <h2>Select a Category</h2>
-          <p>Click on any category to view detailed specifications</p>
+        <div class="section-header">
+          <h2>Our Products</h2>
+          <p>Click on a product to view detailed specifications</p>
         </div>
-
-        <div class="category-grid">
-          <div class="category-card" onclick="openSpec('angles', this)">
+        <p class="results-count" id="resultsCount">Showing 6 products</p>
+        <div class="category-grid" id="productGrid">
+          <div
+            class="category-item"
+            data-category="angles"
+            data-name="Angles Equal Unequal Structural"
+            onclick="openModal('angles', this)"
+          >
             <img
-              src="https://www.shivshaktisteelmetals.com/wp-content/uploads/2024/01/angle-bar.png"
-              alt="Angles (Equal / Unequal)"
-              class="card-img"
+              src="https://5.imimg.com/data5/SELLER/Default/2023/6/318132732/VZ/PH/LV/6242910/ms-angle-500x500.jpg"
+              alt="Angles"
+              class="category-image"
+              onerror="this.src='https://www.shivshaktisteelmetals.com/wp-content/uploads/2024/01/angle-bar.png'"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Structural</span>
               <h3>Angles (Equal / Unequal)</h3>
               <p>L-shaped structural profiles for framework and support</p>
             </div>
           </div>
 
-          <div class="category-card" onclick="openSpec('channels', this)">
+          <div
+            class="category-item"
+            data-category="channels"
+            data-name="Channels C U Section ISMC ISLC"
+            onclick="openModal('channels', this)"
+          >
             <img
               src="https://cdn-haoob.nitrocdn.com/DSNuMdcXsYBrEWHsQCEyKvmsrgktJPmJ/assets/images/optimized/rev-4fba6ef/www.montanstahl.com/wp-content/uploads/2017/07/U-Mix.jpg"
-              alt="Channels (C / U)"
-              class="card-img"
+              alt="Channels"
+              class="category-image"
+              onerror="this.src='https://cpimg.tistatic.com/08073525/b/4/Channel.jpg'"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Structural</span>
               <h3>Channels (C / U)</h3>
               <p>C and U-section channels for structural applications</p>
             </div>
           </div>
 
-          <div class="category-card" onclick="openSpec('beams', this)">
+          <div
+            class="category-item"
+            data-category="beams"
+            data-name="Beams I-beam H-beam ISMB ISWB"
+            onclick="openModal('beams', this)"
+          >
             <img
               src="https://cdn-cbpfc.nitrocdn.com/aUNzEupCvhBohxjguaoOPmlVOeQZXUgt/assets/images/optimized/rev-8224372/www.bakersteeltrading.co.uk/wp-content/uploads/2020/04/steel-beam-1024x577.jpg"
-              alt="Beams (I-beam / H-beam)"
-              class="card-img"
+              alt="Beams"
+              class="category-image"
+              onerror="this.src='https://cpimg.tistatic.com/08073525/b/4/I-Beam.jpg'"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Load Bearing</span>
               <h3>Beams (I-beam / H-beam)</h3>
               <p>Heavy-duty load-bearing beams for construction</p>
             </div>
           </div>
 
-          <div class="category-card" onclick="openSpec('bars', this)">
+          <div
+            class="category-item"
+            data-category="bars"
+            data-name="Bars Flats Rounds Squares MS"
+            onclick="openModal('bars', this)"
+          >
             <img
-              src="https://www.skytechrolling.com/blog/wp-content/uploads/2022/01/Square-Bar-And-Round-Bars-1.jpg"
-              alt="Flats Rounds Squares MS Bars"
-              class="card-img"
+              src="https://5.imimg.com/data5/SELLER/Default/2023/3/293621442/KY/KS/SI/6242910/ms-round-bar-500x500.jpg"
+              alt="MS Bars"
+              class="category-image"
+              onerror="this.src='https://www.skytechrolling.com/blog/wp-content/uploads/2022/01/Square-Bar-And-Round-Bars-1.jpg'"
             />
-            <div class="card-content">
-              <h3>Flats / Rounds / Squares (MS bars)</h3>
+            <div class="category-info">
+              <span class="category-badge">Versatile</span>
+              <h3>Flats / Rounds / Squares</h3>
               <p>Versatile solid bars in multiple cross-sections</p>
             </div>
           </div>
 
-          <div class="category-card" onclick="openSpec('tmt', this)">
+          <div
+            class="category-item"
+            data-category="tmt"
+            data-name="TMT Bars Fe 500 Fe 550 Reinforcement"
+            onclick="openModal('tmt', this)"
+          >
             <img
-              src="https://5.imimg.com/data5/SELLER/Default/2022/4/RY/IC/WW/3129787/tmt-steel-bars-500x500.jpg"
-              alt="TMT Bars Fe 500 Fe 550"
-              class="card-img"
+              src="https://5.imimg.com/data5/SELLER/Default/2023/11/359878742/RI/BG/EH/6242910/tmt-bars-500x500.jpg"
+              alt="TMT Bars"
+              class="category-image"
+              onerror="this.src='https://5.imimg.com/data5/SELLER/Default/2022/4/RY/IC/WW/3129787/tmt-steel-bars-500x500.jpg'"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Reinforcement</span>
               <h3>TMT Bars (Fe 500 / Fe 550)</h3>
               <p>Thermo-mechanically treated reinforcement bars</p>
             </div>
           </div>
 
-          <div class="category-card" onclick="openSpec('chequered', this)">
+          <div
+            class="category-item"
+            data-category="chequered"
+            data-name="Chequered Plates Anti-Slip Diamond Pattern"
+            onclick="openModal('chequered', this)"
+          >
             <img
-              src="https://hhironandsteel.com/images/ms-chequered-plates.webp"
+              src="https://5.imimg.com/data5/SELLER/Default/2023/9/343892341/RN/EC/EE/6242910/chequered-plate-500x500.jpg"
               alt="Chequered Plates"
-              class="card-img"
+              class="category-image"
+              onerror="this.src='https://hhironandsteel.com/images/ms-chequered-plates.webp'"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Anti-Slip</span>
               <h3>Chequered Plates</h3>
               <p>Anti-slip steel plates with raised patterns</p>
             </div>
@@ -465,20 +847,18 @@
       </div>
     </section>
 
-    <!-- MODALS -->
-    <!-- 3.1 Angles (Equal / Unequal) -->
-    <div class="spec-modal" id="modal-angles">
+    <div class="modal" id="modal-angles">
       <div class="modal-header">
         <div class="container">
           <h2>Angles (Equal / Unequal)</h2>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Specifications</h3>
-            <ul class="spec-list">
+            <ul>
               <li>Material: IS 2062 Grade A/B, ASTM A36</li>
               <li>Equal Angles: 25x25mm to 200x200mm</li>
               <li>Unequal Angles: 40x25mm to 200x100mm</li>
@@ -487,34 +867,33 @@
               <li>Finish: Black / Galvanized / Painted</li>
             </ul>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">🏗️ Building Frames</div>
-              <div class="application-item">🌉 Bridge Construction</div>
-              <div class="application-item">📦 Racking Systems</div>
-              <div class="application-item">🏭 Industrial Structures</div>
-              <div class="application-item">🚜 Transmission Towers</div>
-              <div class="application-item">🏢 Support Columns</div>
+              <div class="app-card">🏗️ Building Frames</div>
+              <div class="app-card">🌉 Bridge Construction</div>
+              <div class="app-card">📦 Racking Systems</div>
+              <div class="app-card">🏭 Industrial Structures</div>
+              <div class="app-card">🚜 Transmission Towers</div>
+              <div class="app-card">🏢 Support Columns</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 3.2 Channels (C / U) -->
-    <div class="spec-modal" id="modal-channels">
+    <div class="modal" id="modal-channels">
       <div class="modal-header">
         <div class="container">
           <h2>Channels (C / U)</h2>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Specifications</h3>
-            <ul class="spec-list">
+            <ul>
               <li>Material: IS 2062, ASTM A36, SS 304/316</li>
               <li>Size Range: 75mm to 400mm (height)</li>
               <li>
@@ -526,34 +905,33 @@
               <li>Finish: Hot Rolled / Galvanized</li>
             </ul>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">🏗️ Structural Framing</div>
-              <div class="application-item">🚪 Door & Window Frames</div>
-              <div class="application-item">🏭 Machine Bases</div>
-              <div class="application-item">🌉 Bridge Supports</div>
-              <div class="application-item">🏢 Roof Trusses</div>
-              <div class="application-item">🚂 Railway Wagons</div>
+              <div class="app-card">🏗️ Structural Framing</div>
+              <div class="app-card">🚪 Door & Window Frames</div>
+              <div class="app-card">🏭 Machine Bases</div>
+              <div class="app-card">🌉 Bridge Supports</div>
+              <div class="app-card">🏢 Roof Trusses</div>
+              <div class="app-card">🚂 Railway Wagons</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 3.3 Beams (I-beam / H-beam) -->
-    <div class="spec-modal" id="modal-beams">
+    <div class="modal" id="modal-beams">
       <div class="modal-header">
         <div class="container">
           <h2>Beams (I-beam / H-beam)</h2>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Specifications</h3>
-            <ul class="spec-list">
+            <ul>
               <li>Material: IS 2062, ASTM A992, Grade 50</li>
               <li>I-Beams (ISMB): 100mm to 600mm depth</li>
               <li>H-Beams (ISWB): 150mm to 450mm depth</li>
@@ -562,34 +940,33 @@
               <li>Standards: IS 808, BS 4-1, ASTM A6</li>
             </ul>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">🏢 High-Rise Buildings</div>
-              <div class="application-item">🌉 Bridge Girders</div>
-              <div class="application-item">🏗️ Load-Bearing Structures</div>
-              <div class="application-item">🏭 Industrial Sheds</div>
-              <div class="application-item">⚓ Crane Beams</div>
-              <div class="application-item">🏟️ Stadium Roofs</div>
+              <div class="app-card">🏢 High-Rise Buildings</div>
+              <div class="app-card">🌉 Bridge Girders</div>
+              <div class="app-card">🏗️ Load-Bearing Structures</div>
+              <div class="app-card">🏭 Industrial Sheds</div>
+              <div class="app-card">⚓ Crane Beams</div>
+              <div class="app-card">🏟️ Stadium Roofs</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 3.4 Flats / Rounds / Squares (MS bars) -->
-    <div class="spec-modal" id="modal-bars">
+    <div class="modal" id="modal-bars">
       <div class="modal-header">
         <div class="container">
           <h2>Flats / Rounds / Squares (MS bars)</h2>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Specifications</h3>
-            <ul class="spec-list">
+            <ul>
               <li>Material: Mild Steel (IS 2062), ASTM A36</li>
               <li>Flat Bars: 20x3mm to 150x25mm</li>
               <li>Round Bars: 6mm to 100mm diameter</li>
@@ -599,34 +976,33 @@
               <li>Tolerance: As per IS 1852 / ASTM A6</li>
             </ul>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">⚙️ Machinery Parts</div>
-              <div class="application-item">🔧 Fabrication Works</div>
-              <div class="application-item">🏗️ General Construction</div>
-              <div class="application-item">🚪 Grills & Gates</div>
-              <div class="application-item">🔩 Fastener Manufacturing</div>
-              <div class="application-item">🏭 Industrial Components</div>
+              <div class="app-card">⚙️ Machinery Parts</div>
+              <div class="app-card">🔧 Fabrication Works</div>
+              <div class="app-card">🏗️ General Construction</div>
+              <div class="app-card">🚪 Grills & Gates</div>
+              <div class="app-card">🔩 Fastener Manufacturing</div>
+              <div class="app-card">🏭 Industrial Components</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 3.5 TMT Bars (Fe 500 / Fe 550) -->
-    <div class="spec-modal" id="modal-tmt">
+    <div class="modal" id="modal-tmt">
       <div class="modal-header">
         <div class="container">
           <h2>TMT Bars (Fe 500 / Fe 550)</h2>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Specifications</h3>
-            <ul class="spec-list">
+            <ul>
               <li>Grades: Fe 500, Fe 500D, Fe 550, Fe 550D</li>
               <li>Size Range: 8mm to 40mm diameter</li>
               <li>Length: 12m standard</li>
@@ -636,20 +1012,20 @@
               <li>Rib Pattern: CRS (Continuously Ribbed Surface)</li>
             </ul>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">🏗️ RCC Construction</div>
-              <div class="application-item">🏢 High-Rise Buildings</div>
-              <div class="application-item">🌉 Bridges & Flyovers</div>
-              <div class="application-item">🛣️ Road Infrastructure</div>
-              <div class="application-item">🏭 Industrial Foundations</div>
-              <div class="application-item">🏡 Residential Buildings</div>
+              <div class="app-card">🏗️ RCC Construction</div>
+              <div class="app-card">🏢 High-Rise Buildings</div>
+              <div class="app-card">🌉 Bridges & Flyovers</div>
+              <div class="app-card">🛣️ Road Infrastructure</div>
+              <div class="app-card">🏭 Industrial Foundations</div>
+              <div class="app-card">🏡 Residential Buildings</div>
             </div>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Key Features</h3>
-            <ul class="spec-list">
+            <ul>
               <li>Superior Strength & Ductility</li>
               <li>Corrosion Resistant</li>
               <li>Earthquake Resistant</li>
@@ -662,19 +1038,18 @@
       </div>
     </div>
 
-    <!-- 3.6 Chequered Plates -->
-    <div class="spec-modal" id="modal-chequered">
+    <div class="modal" id="modal-chequered">
       <div class="modal-header">
         <div class="container">
           <h2>Chequered Plates</h2>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Specifications</h3>
-            <ul class="spec-list">
+            <ul>
               <li>Material: IS 2062 Mild Steel, SS 304/316</li>
               <li>Pattern: Diamond, Lentil (Beans), 3-Bar, 5-Bar</li>
               <li>Thickness: 3mm to 12mm</li>
@@ -683,20 +1058,20 @@
               <li>Standards: IS 3502, ASTM A786</li>
             </ul>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">🚶 Walkways & Platforms</div>
-              <div class="application-item">🏗️ Stair Treads</div>
-              <div class="application-item">🚛 Vehicle Flooring</div>
-              <div class="application-item">🏭 Industrial Flooring</div>
-              <div class="application-item">🌉 Bridge Decking</div>
-              <div class="application-item">🏢 Ramps & Access Panels</div>
+              <div class="app-card">🚶 Walkways & Platforms</div>
+              <div class="app-card">🏗️ Stair Treads</div>
+              <div class="app-card">🚛 Vehicle Flooring</div>
+              <div class="app-card">🏭 Industrial Flooring</div>
+              <div class="app-card">🌉 Bridge Decking</div>
+              <div class="app-card">🏢 Ramps & Access Panels</div>
             </div>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Key Features</h3>
-            <ul class="spec-list">
+            <ul>
               <li>Anti-Slip Surface</li>
               <li>High Load Bearing Capacity</li>
               <li>Corrosion Resistant (when galvanized/SS)</li>
@@ -712,7 +1087,7 @@
     <footer>
       <div class="container">
         <div class="footer-grid">
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>About India Steel</h3>
             <p>
               Leading supplier of quality steel products in India. We provide
@@ -720,7 +1095,7 @@
               compliance.
             </p>
           </div>
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>Quick Links</h3>
             <ul>
               <li><a href="#home">Home</a></li>
@@ -729,7 +1104,7 @@
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>Service Categories</h3>
             <ul>
               <li><a href="#">Thread Cutting</a></li>
@@ -738,7 +1113,7 @@
               <li><a href="#">Assembly & Spools</a></li>
             </ul>
           </div>
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>Standards We Follow</h3>
             <ul>
               <li>ASTM Standards</li>
@@ -755,23 +1130,77 @@
     </footer>
 
     <script>
-      function openSpec(id, card) {
+      function filterProducts(category) {
+        const items = document.querySelectorAll(".category-item");
+        const buttons = document.querySelectorAll(".filter-btn");
+        let visibleCount = 0;
+
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        document.querySelector(".search-box input").value = "";
+
+        items.forEach((item) => {
+          if (category === "all" || item.dataset.category === category) {
+            item.classList.remove("hidden");
+            visibleCount++;
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+
+        updateResultsCount(visibleCount);
+      }
+
+      function searchProducts(query) {
+        const items = document.querySelectorAll(".category-item");
+        const searchTerm = query.toLowerCase();
+        let visibleCount = 0;
+
+        if (query.length > 0) {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((btn) => btn.classList.remove("active"));
+        }
+
+        items.forEach((item) => {
+          const name = item.dataset.name.toLowerCase();
+          if (name.includes(searchTerm)) {
+            item.classList.remove("hidden");
+            visibleCount++;
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+
+        updateResultsCount(visibleCount);
+      }
+
+      function updateResultsCount(count) {
+        const resultsCount = document.getElementById("resultsCount");
+        resultsCount.textContent = `Showing ${count} product${
+          count !== 1 ? "s" : ""
+        }`;
+      }
+
+      function openModal(id, card) {
         document
-          .querySelectorAll(".spec-modal")
+          .querySelectorAll(".modal")
           .forEach((m) => m.classList.remove("active"));
         document
-          .querySelectorAll(".category-card")
+          .querySelectorAll(".category-item")
           .forEach((c) => c.classList.remove("selected"));
         document.getElementById("modal-" + id).classList.add("active");
         card.classList.add("selected");
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
-      function closeSpec() {
+
+      function closeModal() {
         document
-          .querySelectorAll(".spec-modal")
+          .querySelectorAll(".modal")
           .forEach((m) => m.classList.remove("active"));
         document
-          .querySelectorAll(".category-card")
+          .querySelectorAll(".category-item")
           .forEach((c) => c.classList.remove("selected"));
       }
     </script>
