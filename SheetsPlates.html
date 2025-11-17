@@ -5,598 +5,1028 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sheets, Plates & Coils - India Steel Industries</title>
     <style>
-      /* ========== BASE STYLES ========== */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: #333;
-      }
-      .container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* ========== HEADER / NAV ========== */
-      .top-info {
-        background: #003366;
-        color: white;
-        padding: 10px 0;
-        font-size: 14px;
-      }
-      .top-info .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .contact-top {
-        display: flex;
-        gap: 30px;
-      }
-      .top-info a {
-        color: white;
-        text-decoration: none;
-        margin-left: 20px;
-      }
-
-      header {
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-      }
-      .header-main {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .logo-section {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        cursor: pointer;
-      }
-      .logo-box {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 20px;
-        border-radius: 10px;
-      }
-      .logo-text h1 {
-        font-size: 24px;
-        color: #003366;
-      }
-      .logo-text p {
-        font-size: 12px;
-        color: #666;
-      }
-
-      nav {
-        background: linear-gradient(135deg, #003366, #0055aa);
-      }
-      .nav-links {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-      }
-      .nav-links li a {
-        color: white;
-        text-decoration: none;
-        padding: 18px 30px;
-        display: block;
-        font-weight: 600;
-        transition: all 0.3s;
-      }
-      .nav-links li a:hover,
-      .nav-links li a.active {
-        background: rgba(255, 255, 255, 0.2);
-      }
-
-      /* ========== BREADCRUMB / HERO ========== */
-      .breadcrumb {
-        background: #f5f5f5;
-        padding: 15px 0;
-      }
-      .breadcrumb-list {
-        list-style: none;
-        display: flex;
-        gap: 10px;
-      }
-      .breadcrumb-list a {
-        color: #003366;
-        text-decoration: none;
-      }
-
-      .hero-slider {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
-        text-align: center;
-        padding: 60px 0;
-      }
-      .hero-content h2 {
-        font-size: 42px;
-        margin-bottom: 10px;
-      }
-      .hero-content p {
-        font-size: 18px;
-        max-width: 800px;
-        margin: auto;
-      }
-
-      /* ========== CATEGORY GRID ========== */
-      .category-section {
-        padding: 60px 0;
-        background: #f9f9f9;
-      }
-      .section-title {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-      .section-title h2 {
-        font-size: 36px;
-        color: #003366;
-      }
-      .section-title p {
-        color: #666;
-      }
-
-      /* CATEGORY SECTION */
-      .category-section {
-        padding: 60px 0;
-        background: #f9f9f9;
-      }
-      .section-title {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-      .section-title h2 {
-        font-size: 36px;
-        color: #003366;
-      }
-      .category-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        margin-bottom: 40px;
-      }
-
-      .category-card img.card-img {
-        width: 100%;
-        height: 140px;
-        object-fit: cover;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-      }
-
-      .category-card {
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        line-height: 1.7;
+        color: #1a1a1a;
         background: #fff;
       }
 
-      .category-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      /* Top Bar */
+      .top-bar {
+        background: #0a0a0a;
+        color: #fff;
+        padding: 12px 0;
+        font-size: 13px;
+        border-bottom: 1px solid #222;
       }
 
-      .category-card.selected {
-        border-color: #ffd700;
-        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+      .top-bar .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
-      .card-icon {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
+
+      .top-bar-left {
+        display: flex;
+        gap: 35px;
+        align-items: center;
+      }
+
+      .top-bar-left span {
+        opacity: 0.9;
+        letter-spacing: 0.3px;
+      }
+
+      .top-bar-right a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 30px;
+        font-weight: 500;
+        transition: color 0.3s;
+        letter-spacing: 0.5px;
+      }
+
+      .top-bar-right a:hover {
+        color: #3b82f6;
+      }
+
+      /* Header */
+      header {
+        background: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 25px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .logo-icon {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        font-weight: 800;
+        font-size: 22px;
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      }
+
+      .logo-text h1 {
+        font-size: 26px;
+        font-weight: 800;
+        color: #0a0a0a;
+        letter-spacing: -0.5px;
+      }
+
+      .logo-text p {
+        font-size: 11px;
+        color: #666;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 5px;
+      }
+
+      nav ul li a {
+        color: #1a1a1a;
+        text-decoration: none;
+        padding: 12px 24px;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        transition: all 0.3s;
+        border-radius: 8px;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        background: #3b82f6;
+        color: #fff;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb {
+        background: #fafafa;
+        padding: 18px 0;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      .breadcrumb-nav {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-size: 13px;
+      }
+
+      .breadcrumb-nav a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 500;
+      }
+
+      .breadcrumb-nav a:hover {
+        color: #3b82f6;
+      }
+
+      .breadcrumb-nav span {
+        color: #0a0a0a;
+        font-weight: 600;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        padding: 100px 0;
         text-align: center;
-        font-size: 50px;
-        padding: 40px;
+        position: relative;
+        overflow: hidden;
       }
-      .card-content {
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path fill="%233b82f6" fill-opacity="0.05" d="M0,0 L1200,0 L1200,60 Q900,120 600,60 T0,60 Z"/></svg>');
+        background-size: cover;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero h2 {
+        font-size: 56px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        color: #ccc;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      /* Filter Section */
+      .filter-section {
+        background: #fafafa;
+        padding: 30px 0;
+        border-bottom: 1px solid #e5e5e5;
+        position: sticky;
+        top: 86px;
+        z-index: 99;
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .filter-label {
+        font-weight: 700;
+        color: #0a0a0a;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .filter-buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        flex: 1;
+      }
+
+      .filter-btn {
+        background: #fff;
+        border: 2px solid #e5e5e5;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: #666;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .filter-btn:hover {
+        border-color: #3b82f6;
+        color: #3b82f6;
+        background: #eff6ff;
+      }
+
+      .filter-btn.active {
+        background: #3b82f6;
+        color: #fff;
+        border-color: #3b82f6;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border: 2px solid #e5e5e5;
+        border-radius: 50px;
+        padding: 8px 20px;
+        min-width: 250px;
+        transition: border-color 0.3s;
+      }
+
+      .search-box:focus-within {
+        border-color: #3b82f6;
+      }
+
+      .search-box input {
+        border: none;
+        outline: none;
+        padding: 6px 10px;
+        font-size: 14px;
+        width: 100%;
+      }
+
+      .search-box span {
+        color: #999;
+      }
+
+      /* Category Section */
+      .category-section {
+        padding: 80px 0;
+        background: #fff;
+      }
+
+      .section-header {
         text-align: center;
-        padding: 25px;
+        margin-bottom: 60px;
       }
-      .card-content h3 {
-        color: #003366;
-        font-size: 20px;
-        margin-bottom: 10px;
+
+      .section-header h2 {
+        font-size: 42px;
+        font-weight: 800;
+        color: #0a0a0a;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
       }
-      /* ========== MODALS ========== */
-      .spec-modal {
+
+      .section-header p {
+        font-size: 16px;
+        color: #666;
+        font-weight: 500;
+      }
+
+      .results-count {
+        color: #666;
+        font-size: 15px;
+        margin-bottom: 30px;
+        font-weight: 500;
+      }
+
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+      }
+
+      .category-item {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        border: 2px solid transparent;
+      }
+
+      .category-item:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        border-color: #3b82f6;
+      }
+
+      .category-item.selected {
+        border-color: #3b82f6;
+        box-shadow: 0 20px 60px rgba(59, 130, 246, 0.25);
+      }
+
+      .category-item.hidden {
+        display: none;
+      }
+
+      .category-image {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+
+      .category-item:hover .category-image {
+        transform: scale(1.05);
+      }
+
+      .category-info {
+        padding: 35px;
+      }
+
+      .category-badge {
+        display: inline-block;
+        background: #3b82f6;
+        color: #fff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .category-info h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #0a0a0a;
+        margin-bottom: 12px;
+        letter-spacing: -0.3px;
+      }
+
+      .category-info p {
+        font-size: 15px;
+        color: #666;
+        line-height: 1.7;
+        margin-bottom: 15px;
+      }
+
+      .product-specs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .spec-badge {
+        background: #f0f0f0;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        color: #666;
+        font-weight: 600;
+      }
+
+      /* Modal */
+      .modal {
         display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: white;
-        z-index: 9999;
+        background: #fff;
+        z-index: 1000;
         overflow-y: auto;
-        animation: slideIn 0.4s ease;
+        animation: fadeInModal 0.3s ease;
       }
-      .spec-modal.active {
+
+      .modal.active {
         display: block;
       }
-      @keyframes slideIn {
+
+      @keyframes fadeInModal {
         from {
           opacity: 0;
-          transform: translateY(30px);
         }
         to {
           opacity: 1;
-          transform: translateY(0);
         }
       }
+
       .modal-header {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
-        padding: 30px 0;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        padding: 40px 0;
         position: sticky;
         top: 0;
+        z-index: 10;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       }
+
       .modal-header .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-      .close-btn {
-        background: white;
-        color: #003366;
-        border: none;
-        padding: 10px 25px;
-        border-radius: 25px;
-        font-weight: bold;
-        cursor: pointer;
+
+      .modal-header h2 {
+        font-size: 36px;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.5px;
       }
 
-      .modal-body {
-        padding: 60px 0;
+      .close-button {
+        background: #3b82f6;
+        color: #fff;
+        border: none;
+        padding: 14px 32px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s;
+        letter-spacing: 0.5px;
       }
-      .spec-card {
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+      .close-button:hover {
+        background: #2563eb;
+        transform: scale(1.05);
+      }
+
+      .modal-content {
+        padding: 80px 0;
+      }
+
+      .spec-box {
+        background: #fafafa;
+        border-radius: 20px;
+        padding: 45px;
         margin-bottom: 40px;
+        border: 1px solid #e5e5e5;
       }
-      .spec-card h3 {
-        color: #003366;
-        border-bottom: 3px solid #ffd700;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
+
+      .spec-box h3 {
+        font-size: 28px;
+        font-weight: 800;
+        color: #0a0a0a;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #3b82f6;
+        letter-spacing: -0.3px;
       }
-      .spec-list {
+
+      .spec-box ul {
         list-style: none;
       }
-      .spec-list li {
-        padding: 8px 0;
-        border-bottom: 1px solid #eee;
+
+      .spec-box ul li {
+        padding: 14px 0;
+        color: #333;
+        font-size: 16px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-left: 30px;
+        position: relative;
       }
+
+      .spec-box ul li:before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: #3b82f6;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .spec-box ul li:last-child {
+        border-bottom: none;
+      }
+
+      .spec-box ul li strong {
+        color: #0a0a0a;
+        font-weight: 700;
+      }
+
       .applications-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-      }
-      .application-item {
-        text-align: center;
-        background: #f7f7f7;
-        border-radius: 12px;
-        padding: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
       }
 
-      footer {
-        background: #1a1a1a;
-        color: white;
-        padding: 50px 0 20px;
+      .app-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px 20px;
+        text-align: center;
+        border: 2px solid #e5e5e5;
+        transition: all 0.3s;
+        font-size: 15px;
+        font-weight: 600;
+        color: #333;
       }
+
+      .app-card:hover {
+        border-color: #3b82f6;
+        background: #eff6ff;
+        transform: translateY(-5px);
+      }
+
+      /* Footer */
+      footer {
+        background: #0a0a0a;
+        color: #ccc;
+        padding: 80px 0 30px;
+      }
+
       .footer-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-        margin-bottom: 30px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 60px;
+        margin-bottom: 50px;
       }
-      .footer-section h3 {
-        color: #ffd700;
-        margin-bottom: 20px;
+
+      .footer-col h3 {
+        color: #3b82f6;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        letter-spacing: 0.5px;
       }
-      .footer-section ul {
+
+      .footer-col p {
+        font-size: 14px;
+        line-height: 1.8;
+        color: #999;
+      }
+
+      .footer-col ul {
         list-style: none;
       }
-      .footer-section ul li {
-        margin-bottom: 10px;
+
+      .footer-col ul li {
+        margin-bottom: 12px;
       }
-      .footer-section a {
-        color: #ccc;
+
+      .footer-col ul li a {
+        color: #999;
         text-decoration: none;
+        font-size: 14px;
         transition: color 0.3s;
       }
-      .footer-section a:hover {
-        color: #ffd700;
+
+      .footer-col ul li a:hover {
+        color: #3b82f6;
       }
+
       .footer-bottom {
         text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid #333;
-        color: #999;
+        padding-top: 40px;
+        border-top: 1px solid #222;
+        color: #666;
+        font-size: 13px;
+      }
+
+      @media (max-width: 1024px) {
+        .category-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .applications-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 20px;
+        }
+        .category-grid,
+        .applications-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero h2 {
+          font-size: 36px;
+        }
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .filter-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .search-box {
+          width: 100%;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- HEADER -->
-    <div class="top-info">
+    <!-- Top Bar -->
+    <div class="top-bar">
       <div class="container">
-        <div class="contact-top">
+        <div class="top-bar-left">
           <span>📧 info@indiasteelind.com</span>
           <span>📞 +91 22 4567 8900</span>
         </div>
-        <div>
+        <div class="top-bar-right">
           <a href="#">Get Quote</a>
           <a href="#">Contact Us</a>
         </div>
       </div>
     </div>
 
+    <!-- Header -->
     <header>
-      <div class="container header-main">
-        <div class="logo-section">
-          <div class="logo-box">ISI</div>
-          <div class="logo-text">
-            <h1>INDIA STEEL INDUSTRIES</h1>
-            <p>Quality Steel Solutions Since 1998</p>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-section">
+            <div class="logo-icon">ISI</div>
+            <div class="logo-text">
+              <h1>INDIA STEEL INDUSTRIES</h1>
+              <p>Quality Steel Solutions Since 1998</p>
+            </div>
           </div>
-        </div>
-        <div class="header-contact">
-          <div class="phone">+91 22 4567 8900</div>
-          <div class="email">info@indiasteelind.com</div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="index.html#products" class="active">Products</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
 
-    <nav>
-      <div class="container">
-        <ul class="nav-links">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="#about">ABOUT US</a></li>
-          <li><a href="index.html#products" class="active">PRODUCTS</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- BREADCRUMB -->
+    <!-- Breadcrumb -->
     <section class="breadcrumb">
       <div class="container">
-        <ul class="breadcrumb-list">
-          <li><a href="index.html">Home</a></li>
-          <li>›</li>
-          <li><a href="index.html#products">Products</a></li>
-          <li>›</li>
-          <li><span>Sheets, Plates & Coils</span></li>
-        </ul>
+        <div class="breadcrumb-nav">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="index.html#products">Products</a>
+          <span>›</span>
+          <span>Sheets, Plates & Coils</span>
+        </div>
       </div>
     </section>
 
-    <!-- HERO -->
-    <section class="hero-slider">
+    <!-- Hero -->
+    <section class="hero">
       <div class="container">
         <div class="hero-content">
-          <h2>🧱 Sheets, Plates & Coils</h2>
+          <h2>📋 Sheets, Plates & Coils</h2>
           <p>
-            Explore our wide range of steel sheets, plates, and coils suitable
-            for industrial, construction, and fabrication applications.
+            Explore our wide range of premium steel sheets, plates, and coils
+            suitable for industrial, construction, and fabrication applications.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CATEGORY GRID -->
+    <!-- Filter Section -->
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-container">
+          <span class="filter-label">Filter By:</span>
+          <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterProducts('all')">
+              All Products
+            </button>
+            <button class="filter-btn" onclick="filterProducts('ms')">
+              MS Plates
+            </button>
+            <button class="filter-btn" onclick="filterProducts('gi')">
+              GI Sheets
+            </button>
+            <button class="filter-btn" onclick="filterProducts('ss')">
+              Stainless Steel
+            </button>
+            <button class="filter-btn" onclick="filterProducts('chequered')">
+              Chequered
+            </button>
+          </div>
+          <div class="search-box">
+            <span>🔍</span>
+            <input
+              type="text"
+              placeholder="Search products..."
+              oninput="searchProducts(this.value)"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Section -->
     <section class="category-section">
       <div class="container">
-        <div class="section-title">
-          <h2>Select a Category</h2>
-          <p>Click a product to view specifications & applications</p>
+        <div class="section-header">
+          <h2>Our Products</h2>
+          <p>Click on a product to view detailed specifications</p>
         </div>
-
-        <div class="category-grid">
-          <div class="category-card" onclick="openSpec('ms-sheets', this)">
+        <p class="results-count" id="resultsCount">Showing 4 products</p>
+        <div class="category-grid" id="productGrid">
+          <!-- Product 1: MS Plates -->
+          <div
+            class="category-item"
+            data-category="ms"
+            data-name="MS Plates Sheets Hot Rolled Cold Rolled"
+            onclick="openModal('ms-sheets', this)"
+          >
             <img
               src="https://m.media-amazon.com/images/I/31isk6v2UEL._AC_UF1000,1000_QL80_.jpg"
               alt="MS Plates & Sheets"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-overlay">
+            <div class="category-info">
+              <span class="category-badge">MS Plates</span>
               <h3>MS Plates & Sheets (HR/CR)</h3>
-              <p>Hot Rolled and Cold Rolled mild steel sheets and plates</p>
+              <p>
+                Hot Rolled and Cold Rolled mild steel sheets and plates for
+                versatile industrial applications
+              </p>
+              <div class="product-specs">
+                <span class="spec-badge">0.5mm - 100mm</span>
+                <span class="spec-badge">IS 2062</span>
+                <span class="spec-badge">ASTM A36</span>
+              </div>
             </div>
           </div>
 
-          <div class="category-card" onclick="openSpec('gi-sheets', this)">
+          <!-- Product 2: GI Sheets -->
+          <div
+            class="category-item"
+            data-category="gi"
+            data-name="GI Sheets Coils Galvanized"
+            onclick="openModal('gi-sheets', this)"
+          >
             <img
               src="https://5.imimg.com/data5/DP/AS/WY/SELLER-2348981/gp-coils.jpg"
-              alt="GI Sheets / Coils"
-              class="card-img"
+              alt="GI Sheets"
+              class="category-image"
             />
-            <div class="card-overlay">
+            <div class="category-info">
+              <span class="category-badge">GI Sheets</span>
               <h3>GI Sheets / Coils</h3>
-              <p>Galvanized steel sheets and coils for anti-corrosion use</p>
+              <p>
+                Galvanized steel sheets and coils with superior anti-corrosion
+                properties
+              </p>
+              <div class="product-specs">
+                <span class="spec-badge">0.3mm - 3.2mm</span>
+                <span class="spec-badge">80-275 GSM</span>
+                <span class="spec-badge">IS 277</span>
+              </div>
             </div>
           </div>
 
-          <div class="category-card" onclick="openSpec('ss-sheets', this)">
+          <!-- Product 3: SS Sheets -->
+          <div
+            class="category-item"
+            data-category="ss"
+            data-name="Stainless Steel Sheets 304 316"
+            onclick="openModal('ss-sheets', this)"
+          >
             <img
               src="https://5.imimg.com/data5/SELLER/Default/2025/4/503163333/FI/KN/HZ/216700989/jindal-stainless-steel-sheets-1000x1000.jpg"
               alt="Stainless Steel Sheets"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-overlay">
-              <h3>Stainless Steel Sheets (304 / 316)</h3>
-              <p>High corrosion resistance stainless steel sheets</p>
+            <div class="category-info">
+              <span class="category-badge">Stainless Steel</span>
+              <h3>Stainless Steel Sheets (304/316)</h3>
+              <p>
+                High corrosion resistance stainless steel sheets for demanding
+                environments
+              </p>
+              <div class="product-specs">
+                <span class="spec-badge">304 / 316 / 316L</span>
+                <span class="spec-badge">0.3mm - 6mm</span>
+                <span class="spec-badge">Multiple Finishes</span>
+              </div>
             </div>
           </div>
 
+          <!-- Product 4: Chequered Plate -->
           <div
-            class="category-card"
-            onclick="openSpec('chequered-plate', this)"
+            class="category-item"
+            data-category="chequered"
+            data-name="Chequered Checkered Plate Diamond Pattern"
+            onclick="openModal('chequered', this)"
           >
             <img
               src="https://5.imimg.com/data5/GLADMIN/Default/2022/7/JE/GI/AJ/86648/chequered-plate-500x500.jpg"
               alt="Chequered Plate"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-overlay">
+            <div class="category-info">
+              <span class="category-badge">Chequered</span>
               <h3>Chequered / Checkered Plate</h3>
-              <p>Anti-slip pattern plates for flooring and industrial use</p>
+              <p>
+                Anti-slip pattern plates ideal for flooring and heavy-duty
+                industrial use
+              </p>
+              <div class="product-specs">
+                <span class="spec-badge">2mm - 10mm</span>
+                <span class="spec-badge">Diamond Pattern</span>
+                <span class="spec-badge">MS / SS / Al</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- MODALS -->
-    <!-- Modal 1 -->
-    <div class="spec-modal" id="modal-ms-sheets">
+    <!-- Modals -->
+    <!-- MS Sheets Modal -->
+    <div class="modal" id="modal-ms-sheets">
       <div class="modal-header">
         <div class="container">
           <h2>MS Plates & Sheets (HR / CR)</h2>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-card">
-            <h3>Specifications</h3>
-            <ul class="spec-list">
-              <li>Thickness: 0.5 mm – 100 mm</li>
-              <li>Width: 1000 mm – 2500 mm</li>
-              <li>Length: Custom / Standard</li>
-              <li>Grades: IS 2062, ASTM A36</li>
+          <div class="spec-box">
+            <h3>Technical Specifications</h3>
+            <ul>
+              <li><strong>Thickness:</strong> 0.5 mm – 100 mm</li>
+              <li><strong>Width:</strong> 1000 mm – 2500 mm</li>
+              <li>
+                <strong>Length:</strong> Custom / Standard sizes available
+              </li>
+              <li><strong>Grades:</strong> IS 2062, ASTM A36</li>
+              <li>
+                <strong>Finish:</strong> Hot Rolled (HR) / Cold Rolled (CR)
+              </li>
             </ul>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">🏗️ Construction</div>
-              <div class="application-item">🚛 Vehicle Body</div>
-              <div class="application-item">🏭 Machinery</div>
-              <div class="application-item">🔩 Fabrication</div>
+              <div class="app-card">🏗️ Construction</div>
+              <div class="app-card">🚛 Vehicle Body</div>
+              <div class="app-card">🏭 Machinery</div>
+              <div class="app-card">🔩 Fabrication</div>
+              <div class="app-card">🏢 Structural Work</div>
+              <div class="app-card">⚙️ General Engineering</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Modal 2 -->
-    <div class="spec-modal" id="modal-gi-sheets">
+    <!-- GI Sheets Modal -->
+    <div class="modal" id="modal-gi-sheets">
       <div class="modal-header">
         <div class="container">
           <h2>GI Sheets / Coils</h2>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-card">
-            <h3>Specifications</h3>
-            <ul class="spec-list">
-              <li>Thickness: 0.3 mm – 3.2 mm</li>
-              <li>Coating: 80 GSM – 275 GSM</li>
-              <li>Form: Sheet / Coil</li>
-              <li>Standards: IS 277 / ASTM A653</li>
+          <div class="spec-box">
+            <h3>Technical Specifications</h3>
+            <ul>
+              <li><strong>Thickness:</strong> 0.3 mm – 3.2 mm</li>
+              <li><strong>Coating:</strong> 80 GSM – 275 GSM</li>
+              <li><strong>Form:</strong> Sheet / Coil</li>
+              <li><strong>Standards:</strong> IS 277 / ASTM A653</li>
+              <li><strong>Coating Type:</strong> Hot-dip galvanized</li>
             </ul>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">🏠 Roofing</div>
-              <div class="application-item">🚜 Panels</div>
-              <div class="application-item">🏭 Cladding</div>
-              <div class="application-item">⚙️ HVAC</div>
+              <div class="app-card">🏠 Roofing</div>
+              <div class="app-card">🚜 Panels</div>
+              <div class="app-card">🏭 Cladding</div>
+              <div class="app-card">⚙️ HVAC</div>
+              <div class="app-card">🚪 Door Frames</div>
+              <div class="app-card">📦 Storage Tanks</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Modal 3 -->
-    <div class="spec-modal" id="modal-ss-sheets">
+    <!-- SS Sheets Modal -->
+    <div class="modal" id="modal-ss-sheets">
       <div class="modal-header">
         <div class="container">
           <h2>Stainless Steel Sheets (304 / 316)</h2>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-card">
-            <h3>Specifications</h3>
-            <ul class="spec-list">
-              <li>Grades: 304 / 316 / 316L</li>
-              <li>Finish: 2B / BA / Mirror / Matte</li>
-              <li>Thickness: 0.3 mm – 6 mm</li>
-              <li>Standards: ASTM A240 / JIS / EN</li>
+          <div class="spec-box">
+            <h3>Technical Specifications</h3>
+            <ul>
+              <li><strong>Grades:</strong> 304 / 316 / 316L</li>
+              <li>
+                <strong>Finish:</strong> 2B / BA / Mirror / Matte / Hairline
+              </li>
+              <li><strong>Thickness:</strong> 0.3 mm – 6 mm</li>
+              <li><strong>Standards:</strong> ASTM A240 / JIS / EN</li>
+              <li><strong>Surface:</strong> No.1, No.2B, No.4, BA, Mirror</li>
             </ul>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">🍽️ Kitchen Equipment</div>
-              <div class="application-item">🏭 Chemical Plants</div>
-              <div class="application-item">🚢 Marine Structures</div>
-              <div class="application-item">🏗️ Architecture</div>
+              <div class="app-card">🍽️ Kitchen Equipment</div>
+              <div class="app-card">🏭 Chemical Plants</div>
+              <div class="app-card">🚢 Marine Structures</div>
+              <div class="app-card">🏗️ Architecture</div>
+              <div class="app-card">🏥 Medical Equipment</div>
+              <div class="app-card">🍺 Food Processing</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Modal 4 -->
-    <div class="spec-modal" id="modal-chequered-plate">
+    <!-- Chequered Plate Modal -->
+    <div class="modal" id="modal-chequered">
       <div class="modal-header">
         <div class="container">
           <h2>Chequered / Checkered Plate</h2>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-card">
-            <h3>Specifications</h3>
-            <ul class="spec-list">
-              <li>Pattern: Diamond / Tear Drop</li>
-              <li>Thickness: 2 mm – 10 mm</li>
-              <li>Material: MS / SS / Aluminium</li>
-              <li>Finish: Smooth or Polished</li>
+          <div class="spec-box">
+            <h3>Technical Specifications</h3>
+            <ul>
+              <li><strong>Pattern:</strong> Diamond / Tear Drop</li>
+              <li><strong>Thickness:</strong> 2 mm – 10 mm</li>
+              <li><strong>Material:</strong> MS / SS / Aluminium</li>
+              <li><strong>Finish:</strong> Smooth or Polished</li>
+              <li>
+                <strong>Standard Sizes:</strong> 4' x 8', 5' x 10', Custom
+              </li>
             </ul>
           </div>
-          <div class="spec-card">
+          <div class="spec-box">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">🚛 Truck Floors</div>
-              <div class="application-item">🏭 Walkways</div>
-              <div class="application-item">🏗️ Stair Treads</div>
-              <div class="application-item">🚇 Platforms</div>
+              <div class="app-card">🚛 Truck Floors</div>
+              <div class="app-card">🏭 Walkways</div>
+              <div class="app-card">🏗️ Stair Treads</div>
+              <div class="app-card">🚇 Platforms</div>
+              <div class="app-card">🏗️ Ramps</div>
+              <div class="app-card">🚪 Threshold Plates</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-grid">
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>About India Steel</h3>
             <p>
               Leading supplier of quality steel products in India. We provide
@@ -604,7 +1034,7 @@
               compliance.
             </p>
           </div>
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>Quick Links</h3>
             <ul>
               <li><a href="#home">Home</a></li>
@@ -613,7 +1043,7 @@
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>Service Categories</h3>
             <ul>
               <li><a href="#">Thread Cutting</a></li>
@@ -622,7 +1052,7 @@
               <li><a href="#">Assembly & Spools</a></li>
             </ul>
           </div>
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>Standards We Follow</h3>
             <ul>
               <li>ASTM Standards</li>
@@ -639,23 +1069,87 @@
     </footer>
 
     <script>
-      function openSpec(id, card) {
+      // Filter Products
+      function filterProducts(category) {
+        const items = document.querySelectorAll(".category-item");
+        const buttons = document.querySelectorAll(".filter-btn");
+        let visibleCount = 0;
+
+        // Update active button
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        // Clear search box
+        document.querySelector(".search-box input").value = "";
+
+        // Filter items
+        items.forEach((item) => {
+          if (category === "all" || item.dataset.category === category) {
+            item.classList.remove("hidden");
+            visibleCount++;
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+
+        // Update count
+        updateResultsCount(visibleCount);
+      }
+
+      // Search Products
+      function searchProducts(query) {
+        const items = document.querySelectorAll(".category-item");
+        const searchTerm = query.toLowerCase();
+        let visibleCount = 0;
+
+        // Reset filter buttons when searching
+        if (query.length > 0) {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((btn) => btn.classList.remove("active"));
+        }
+
+        items.forEach((item) => {
+          const name = item.dataset.name.toLowerCase();
+          if (name.includes(searchTerm)) {
+            item.classList.remove("hidden");
+            visibleCount++;
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+
+        updateResultsCount(visibleCount);
+      }
+
+      // Update Results Count
+      function updateResultsCount(count) {
+        const resultsCount = document.getElementById("resultsCount");
+        resultsCount.textContent = `Showing ${count} product${
+          count !== 1 ? "s" : ""
+        }`;
+      }
+
+      // Open Modal
+      function openModal(id, card) {
         document
-          .querySelectorAll(".spec-modal")
+          .querySelectorAll(".modal")
           .forEach((m) => m.classList.remove("active"));
         document
-          .querySelectorAll(".category-card")
+          .querySelectorAll(".category-item")
           .forEach((c) => c.classList.remove("selected"));
         document.getElementById("modal-" + id).classList.add("active");
         card.classList.add("selected");
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
-      function closeSpec() {
+
+      // Close Modal
+      function closeModal() {
         document
-          .querySelectorAll(".spec-modal")
+          .querySelectorAll(".modal")
           .forEach((m) => m.classList.remove("active"));
         document
-          .querySelectorAll(".category-card")
+          .querySelectorAll(".category-item")
           .forEach((c) => c.classList.remove("selected"));
       }
     </script>
