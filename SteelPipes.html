@@ -10,464 +10,726 @@
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: #333;
-      }
-      .container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .top-info {
-        background: #003366;
-        color: white;
-        padding: 10px 0;
-        font-size: 14px;
-      }
-      .top-info .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .contact-top {
-        display: flex;
-        gap: 30px;
-      }
-      .top-info a {
-        color: white;
-        text-decoration: none;
-        margin-left: 20px;
-      }
-
-      header {
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-      }
-      .header-main {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .logo-section {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        cursor: pointer;
-      }
-      .logo-box {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 20px;
-        border-radius: 10px;
-      }
-      .logo-text h1 {
-        font-size: 24px;
-        color: #003366;
-      }
-      .logo-text p {
-        font-size: 12px;
-        color: #666;
-      }
-      .header-contact {
-        text-align: right;
-      }
-      .phone {
-        font-size: 20px;
-        font-weight: bold;
-        color: #003366;
-      }
-      .email {
-        font-size: 14px;
-        color: #666;
-      }
-
-      nav {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        padding: 0;
-      }
-      .nav-links {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-      }
-      .nav-links li a {
-        color: white;
-        text-decoration: none;
-        padding: 18px 30px;
-        display: block;
-        font-weight: 600;
-        transition: all 0.3s;
-      }
-      .nav-links li a:hover,
-      .nav-links li a.active {
-        background: rgba(255, 255, 255, 0.2);
-      }
-
-      .breadcrumb {
-        background: #f5f5f5;
-        padding: 15px 0;
-      }
-      .breadcrumb-list {
-        list-style: none;
-        display: flex;
-        gap: 10px;
-        align-items: center;
-      }
-      .breadcrumb-list a {
-        color: #003366;
-        text-decoration: none;
-      }
-
-      .hero-slider {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
-        padding: 60px 0;
-        text-align: center;
-      }
-      .hero-content h2 {
-        font-size: 42px;
-        margin-bottom: 15px;
-      }
-      .hero-content p {
-        font-size: 18px;
-        max-width: 800px;
-        margin: 0 auto;
-        opacity: 0.95;
-      }
-
-      .category-section {
-        padding: 60px 0;
-        background: #f9f9f9;
-      }
-      .section-title {
-        text-align: center;
-        margin-bottom: 50px;
-      }
-      .section-title h2 {
-        font-size: 36px;
-        color: #003366;
-        margin-bottom: 10px;
-      }
-      .section-title p {
-        color: #666;
-        font-size: 16px;
-      }
-      .category-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        margin-bottom: 40px;
-      }
-
-      .category-card img.card-img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-      }
-
-      .category-card {
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        line-height: 1.7;
+        color: #1a1a1a;
         background: #fff;
       }
 
-      .category-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      /* Top Bar */
+      .top-bar {
+        background: #0a0a0a;
+        color: #fff;
+        padding: 12px 0;
+        font-size: 13px;
+        border-bottom: 1px solid #222;
       }
 
-      .category-card.selected {
-        border-color: #ffd700;
-        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+      .top-bar .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
-      .card-icon {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
-        padding: 40px;
-        text-align: center;
-        font-size: 60px;
+
+      .top-bar-left {
+        display: flex;
+        gap: 35px;
+        align-items: center;
       }
-      .card-content {
-        padding: 30px;
-        text-align: center;
+
+      .top-bar-left span {
+        opacity: 0.9;
+        letter-spacing: 0.3px;
       }
-      .card-content h3 {
-        color: #003366;
-        font-size: 20px;
-        margin-bottom: 10px;
+
+      .top-bar-right a {
+        color: #fff;
+        text-decoration: none;
+        margin-left: 30px;
+        font-weight: 500;
+        transition: color 0.3s;
+        letter-spacing: 0.5px;
       }
-      .card-content p {
+
+      .top-bar-right a:hover {
+        color: #3b82f6;
+      }
+
+      /* Header */
+      header {
+        background: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 25px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .logo-icon {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        font-weight: 800;
+        font-size: 22px;
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      }
+
+      .logo-text h1 {
+        font-size: 26px;
+        font-weight: 800;
+        color: #0a0a0a;
+        letter-spacing: -0.5px;
+      }
+
+      .logo-text p {
+        font-size: 11px;
         color: #666;
-        font-size: 14px;
-        line-height: 1.5;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-top: 2px;
       }
 
-      .spec-modal {
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 5px;
+      }
+
+      nav ul li a {
+        color: #1a1a1a;
+        text-decoration: none;
+        padding: 12px 24px;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        transition: all 0.3s;
+        border-radius: 8px;
+      }
+
+      nav ul li a:hover,
+      nav ul li a.active {
+        background: #3b82f6;
+        color: #fff;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb {
+        background: #fafafa;
+        padding: 18px 0;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      .breadcrumb-nav {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-size: 13px;
+      }
+
+      .breadcrumb-nav a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 500;
+      }
+
+      .breadcrumb-nav a:hover {
+        color: #3b82f6;
+      }
+
+      .breadcrumb-nav span {
+        color: #0a0a0a;
+        font-weight: 600;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        padding: 100px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path fill="%233b82f6" fill-opacity="0.05" d="M0,0 L1200,0 L1200,60 Q900,120 600,60 T0,60 Z"/></svg>');
+        background-size: cover;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero h2 {
+        font-size: 56px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        color: #ccc;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      /* Filter Section */
+      .filter-section {
+        background: #fafafa;
+        padding: 30px 0;
+        border-bottom: 1px solid #e5e5e5;
+        position: sticky;
+        top: 86px;
+        z-index: 99;
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .filter-label {
+        font-weight: 700;
+        color: #0a0a0a;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .filter-buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        flex: 1;
+      }
+
+      .filter-btn {
+        background: #fff;
+        border: 2px solid #e5e5e5;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: #666;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .filter-btn:hover {
+        border-color: #3b82f6;
+        color: #3b82f6;
+        background: #eff6ff;
+      }
+
+      .filter-btn.active {
+        background: #3b82f6;
+        color: #fff;
+        border-color: #3b82f6;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border: 2px solid #e5e5e5;
+        border-radius: 50px;
+        padding: 8px 20px;
+        min-width: 250px;
+        transition: border-color 0.3s;
+      }
+
+      .search-box:focus-within {
+        border-color: #3b82f6;
+      }
+
+      .search-box input {
+        border: none;
+        outline: none;
+        padding: 6px 10px;
+        font-size: 14px;
+        width: 100%;
+      }
+
+      .search-box span {
+        color: #999;
+      }
+
+      /* Category Section */
+      .category-section {
+        padding: 80px 0;
+        background: #fff;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header h2 {
+        font-size: 42px;
+        font-weight: 800;
+        color: #0a0a0a;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+      }
+
+      .section-header p {
+        font-size: 16px;
+        color: #666;
+        font-weight: 500;
+      }
+
+      .results-count {
+        color: #666;
+        font-size: 15px;
+        margin-bottom: 30px;
+        font-weight: 500;
+      }
+
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+      }
+
+      .category-item {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        border: 2px solid transparent;
+      }
+
+      .category-item:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        border-color: #3b82f6;
+      }
+
+      .category-item.selected {
+        border-color: #3b82f6;
+        box-shadow: 0 20px 60px rgba(59, 130, 246, 0.25);
+      }
+
+      .category-item.hidden {
+        display: none;
+      }
+
+      .category-image {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+
+      .category-item:hover .category-image {
+        transform: scale(1.05);
+      }
+
+      .category-info {
+        padding: 35px;
+      }
+
+      .category-badge {
+        display: inline-block;
+        background: #3b82f6;
+        color: #fff;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .category-info h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #0a0a0a;
+        margin-bottom: 12px;
+        letter-spacing: -0.3px;
+      }
+
+      .category-info p {
+        font-size: 15px;
+        color: #666;
+        line-height: 1.7;
+      }
+
+      /* Modal */
+      .modal {
         display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: white;
-        z-index: 9999;
+        background: #fff;
+        z-index: 1000;
         overflow-y: auto;
-        animation: slideIn 0.4s ease;
+        animation: fadeInModal 0.3s ease;
       }
-      .spec-modal.active {
+
+      .modal.active {
         display: block;
       }
-      @keyframes slideIn {
+
+      @keyframes fadeInModal {
         from {
           opacity: 0;
-          transform: translateY(30px);
         }
         to {
           opacity: 1;
-          transform: translateY(0);
         }
       }
 
       .modal-header {
-        background: linear-gradient(135deg, #003366, #0055aa);
-        color: white;
-        padding: 30px 0;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        padding: 40px 0;
         position: sticky;
         top: 0;
-        z-index: 100;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       }
+
       .modal-header .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-      .modal-title h2 {
-        font-size: 32px;
+
+      .modal-header h2 {
+        font-size: 36px;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.5px;
       }
-      .close-btn {
-        background: white;
-        color: #003366;
+
+      .close-button {
+        background: #3b82f6;
+        color: #fff;
         border: none;
-        padding: 12px 30px;
-        border-radius: 25px;
-        font-size: 16px;
-        font-weight: bold;
+        padding: 14px 32px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 14px;
         cursor: pointer;
         transition: all 0.3s;
+        letter-spacing: 0.5px;
       }
-      .close-btn:hover {
-        background: #ffd700;
+
+      .close-button:hover {
+        background: #2563eb;
         transform: scale(1.05);
       }
 
-      .modal-body {
-        padding: 60px 0;
+      .modal-content {
+        padding: 80px 0;
       }
-      .spec-details-grid {
+
+      .spec-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
+        gap: 30px;
         margin-bottom: 40px;
       }
-      .spec-card {
-        background: white;
-        border-radius: 15px;
-        padding: 35px;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+
+      .spec-box {
+        background: #fafafa;
+        border-radius: 20px;
+        padding: 45px;
+        border: 1px solid #e5e5e5;
       }
-      .spec-card h3 {
-        color: #003366;
-        font-size: 24px;
-        margin-bottom: 20px;
+
+      .spec-box h3 {
+        font-size: 28px;
+        font-weight: 800;
+        color: #0a0a0a;
+        margin-bottom: 25px;
         padding-bottom: 15px;
-        border-bottom: 3px solid #ffd700;
+        border-bottom: 3px solid #3b82f6;
+        letter-spacing: -0.3px;
       }
-      .spec-list {
+
+      .spec-box ul {
         list-style: none;
-        padding: 0;
       }
-      .spec-list li {
-        padding: 12px 0;
-        border-bottom: 1px solid #eee;
-        display: flex;
-        gap: 12px;
+
+      .spec-box ul li {
+        padding: 14px 0;
+        color: #333;
+        font-size: 16px;
+        border-bottom: 1px solid #e5e5e5;
+        padding-left: 30px;
+        position: relative;
       }
-      .spec-list li:last-child {
-        border-bottom: none;
-      }
-      .spec-list li::before {
-        content: "✓";
-        color: #ffd700;
+
+      .spec-box ul li:before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: #3b82f6;
         font-weight: bold;
         font-size: 18px;
       }
-      .spec-list strong {
-        color: #003366;
+
+      .spec-box ul li:last-child {
+        border-bottom: none;
+      }
+
+      .spec-box ul li strong {
+        color: #0a0a0a;
+        font-weight: 700;
+      }
+
+      .applications-section {
+        background: #fafafa;
+        border-radius: 20px;
+        padding: 45px;
+        border: 1px solid #e5e5e5;
+      }
+
+      .applications-section h3 {
+        font-size: 28px;
+        font-weight: 800;
+        color: #0a0a0a;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #3b82f6;
+        letter-spacing: -0.3px;
       }
 
       .applications-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-        margin-top: 30px;
+        gap: 25px;
       }
-      .application-item {
-        background: linear-gradient(135deg, #f5f5f5, #ffffff);
-        padding: 25px;
-        border-radius: 12px;
+
+      .app-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px 20px;
         text-align: center;
+        border: 2px solid #e5e5e5;
         transition: all 0.3s;
-        border: 2px solid transparent;
       }
-      .application-item:hover {
-        border-color: #003366;
-        transform: scale(1.05);
+
+      .app-card:hover {
+        border-color: #3b82f6;
+        background: #eff6ff;
+        transform: translateY(-5px);
       }
-      .application-icon {
+
+      .app-icon {
         font-size: 48px;
         margin-bottom: 15px;
       }
-      .application-item h4 {
-        color: #003366;
-        font-size: 16px;
+
+      .app-card h4 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #333;
       }
 
+      /* Footer */
       footer {
-        background: #1a1a1a;
-        color: white;
-        padding: 50px 0 20px;
+        background: #0a0a0a;
+        color: #ccc;
+        padding: 80px 0 30px;
       }
+
       .footer-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 40px;
-        margin-bottom: 30px;
+        gap: 60px;
+        margin-bottom: 50px;
       }
-      .footer-section h3 {
-        color: #ffd700;
-        margin-bottom: 20px;
+
+      .footer-col h3 {
+        color: #3b82f6;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        letter-spacing: 0.5px;
       }
-      .footer-section ul {
+
+      .footer-col p {
+        font-size: 14px;
+        line-height: 1.8;
+        color: #999;
+      }
+
+      .footer-col ul {
         list-style: none;
       }
-      .footer-section ul li {
-        margin-bottom: 10px;
+
+      .footer-col ul li {
+        margin-bottom: 12px;
       }
-      .footer-section a {
-        color: #ccc;
+
+      .footer-col ul li a {
+        color: #999;
         text-decoration: none;
+        font-size: 14px;
         transition: color 0.3s;
       }
-      .footer-section a:hover {
-        color: #ffd700;
+
+      .footer-col ul li a:hover {
+        color: #3b82f6;
       }
+
       .footer-bottom {
         text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid #333;
-        color: #999;
+        padding-top: 40px;
+        border-top: 1px solid #222;
+        color: #666;
+        font-size: 13px;
       }
 
       @media (max-width: 1024px) {
         .category-grid {
           grid-template-columns: repeat(2, 1fr);
         }
-      }
-      @media (max-width: 768px) {
-        .category-grid {
-          grid-template-columns: 1fr;
-        }
-        .spec-details-grid {
+        .spec-grid {
           grid-template-columns: 1fr;
         }
         .applications-grid {
           grid-template-columns: repeat(2, 1fr);
         }
-        .nav-links {
-          flex-direction: column;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 20px;
         }
+        .category-grid,
+        .applications-grid,
         .footer-grid {
           grid-template-columns: 1fr;
+        }
+        .hero h2 {
+          font-size: 36px;
+        }
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .filter-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .search-box {
+          width: 100%;
+        }
+        .filter-section {
+          top: 0;
         }
       }
     </style>
   </head>
   <body>
-    <div class="top-info">
+    <!-- Top Bar -->
+    <div class="top-bar">
       <div class="container">
-        <div class="contact-top">
+        <div class="top-bar-left">
           <span>📧 info@indiasteelind.com</span>
           <span>📞 +91 22 4567 8900</span>
         </div>
-        <div>
+        <div class="top-bar-right">
           <a href="#quote">Get Quote</a>
           <a href="#contact">Contact Us</a>
         </div>
       </div>
     </div>
 
+    <!-- Header -->
     <header>
       <div class="container">
-        <div class="header-main">
+        <div class="header-content">
           <div class="logo-section">
-            <div class="logo-box">ISI</div>
+            <div class="logo-icon">ISI</div>
             <div class="logo-text">
               <h1>INDIA STEEL INDUSTRIES</h1>
               <p>Quality Steel Solutions Since 1998</p>
             </div>
           </div>
-          <div class="header-contact">
-            <div class="phone">+91 22 4567 8900</div>
-            <div class="email">info@indiasteelind.com</div>
-          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="index.html#products" class="active">Products</a></li>
+              <li><a href="#features">Why Choose Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
 
-    <nav>
-      <div class="container">
-        <ul class="nav-links">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="#about">ABOUT US</a></li>
-          <li><a href="index.html#products" class="active">Products</a></li>
-          <li><a href="#features">WHY CHOOSE US</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- BREADCRUMB -->
+    <!-- Breadcrumb -->
     <section class="breadcrumb">
       <div class="container">
-        <ul class="breadcrumb-list">
-          <li><a href="index.html">Home</a></li>
-          <li>›</li>
-          <li><a href="index.html#products">Products</a></li>
-          <li>›</li>
-          <li><span>Steel Pipes & Tubes</span></li>
-        </ul>
+        <div class="breadcrumb-nav">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="index.html#products">Products</a>
+          <span>›</span>
+          <span>Steel Pipes & Tubes</span>
+        </div>
       </div>
     </section>
 
-    <section class="hero-slider">
+    <!-- Hero -->
+    <section class="hero">
       <div class="container">
         <div class="hero-content">
           <h2>🛠️ Steel Pipes & Tubes</h2>
@@ -479,129 +741,212 @@
       </div>
     </section>
 
+    <!-- Filter Section -->
+    <section class="filter-section">
+      <div class="container">
+        <div class="filter-container">
+          <span class="filter-label">Filter By:</span>
+          <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterProducts('all')">
+              All Products
+            </button>
+            <button class="filter-btn" onclick="filterProducts('pipes')">
+              Pipes
+            </button>
+            <button class="filter-btn" onclick="filterProducts('hollow')">
+              Hollow Sections
+            </button>
+            <button class="filter-btn" onclick="filterProducts('stainless')">
+              Stainless Steel
+            </button>
+          </div>
+          <div class="search-box">
+            <span>🔍</span>
+            <input
+              type="text"
+              placeholder="Search products..."
+              oninput="searchProducts(this.value)"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Section -->
     <section class="category-section">
       <div class="container">
-        <div class="section-title">
+        <div class="section-header">
           <h2>Select a Product Category</h2>
-          <p>Click on any card to view detailed specifications</p>
+          <p>Click on any product to view detailed specifications</p>
         </div>
-
-        <div class="category-grid">
-          <div class="category-card" onclick="openSpec('ms-black-pipes', this)">
+        <p class="results-count" id="resultsCount">Showing 9 products</p>
+        <div class="category-grid" id="productGrid">
+          <!-- MS Black Pipes -->
+          <div
+            class="category-item"
+            data-category="pipes"
+            data-name="MS Black Pipes IS:1239"
+            onclick="openModal('ms-black-pipes', this)"
+          >
             <img
               src="https://www.steeltubesindia.net/img/is-1239-pipe.jpg"
               alt="MS Black Pipes"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Pipes</span>
               <h3>MS Black Pipes</h3>
               <p>IS:1239 A/B/C Class for structural & plumbing applications</p>
             </div>
           </div>
 
-          <div class="category-card" onclick="openSpec('gi-pipes', this)">
+          <!-- GI Pipes -->
+          <div
+            class="category-item"
+            data-category="pipes"
+            data-name="GI Pipes Galvanized"
+            onclick="openModal('gi-pipes', this)"
+          >
             <img
               src="https://aliyaqoob.com/resource/image/1665650329Galvanized-Iron-Pipes-315x315-1.jpg"
               alt="GI Pipes"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Pipes</span>
               <h3>GI Pipes</h3>
               <p>Galvanized pipes with superior corrosion resistance</p>
             </div>
           </div>
 
-          <div class="category-card" onclick="openSpec('seamless-pipes', this)">
+          <!-- Seamless Pipes -->
+          <div
+            class="category-item"
+            data-category="pipes"
+            data-name="Seamless Pipes ASTM API"
+            onclick="openModal('seamless-pipes', this)"
+          >
             <img
               src="https://www.astmsteelpipes.com/uploaded_files/category_images/Seamless-Steel-Pipe01_10_37.jpg"
               alt="Seamless Pipes"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Pipes</span>
               <h3>Seamless Pipes</h3>
               <p>ASTM/API grade pipes for high-pressure applications</p>
             </div>
           </div>
 
-          <div class="category-card" onclick="openSpec('erw-pipes', this)">
+          <!-- ERW Pipes -->
+          <div
+            class="category-item"
+            data-category="pipes"
+            data-name="ERW Pipes Electric Resistance Welded"
+            onclick="openModal('erw-pipes', this)"
+          >
             <img
               src="https://www.oshwin.com/images/stainless-steel-erw-pipe-2.jpg"
               alt="ERW Pipes"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Pipes</span>
               <h3>ERW Pipes</h3>
               <p>Electric Resistance Welded pipes for general use</p>
             </div>
           </div>
 
+          <!-- Stainless Steel Pipes -->
           <div
-            class="category-card"
-            onclick="openSpec('stainless-steel-pipes', this)"
+            class="category-item"
+            data-category="stainless"
+            data-name="Stainless Steel Pipes SS 202 304 316"
+            onclick="openModal('stainless-steel-pipes', this)"
           >
             <img
               src="https://www.ashapurasteelpipe.com/wp-content/webp-express/webp-images/uploads/2023/06/Carbon-Steel-Seamless-Pipe-Vs-Seamless-Steel-Pipe.jpg.webp"
               alt="Stainless Steel Pipes"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Stainless Steel</span>
               <h3>Stainless Steel Pipes</h3>
               <p>SS 202/304/316 for chemical & food industries</p>
             </div>
           </div>
 
-          <div class="category-card" onclick="openSpec('conduit-pipes', this)">
+          <!-- Conduit Pipes -->
+          <div
+            class="category-item"
+            data-category="pipes"
+            data-name="Conduit Pipes GI Electrical"
+            onclick="openModal('conduit-pipes', this)"
+          >
             <img
               src="https://m.media-amazon.com/images/I/51IhIjmaxGL._AC_UF1000,1000_QL80_.jpg"
               alt="Conduit Pipes"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Pipes</span>
               <h3>Conduit Pipes</h3>
               <p>GI electrical conduit for safe cable management</p>
             </div>
           </div>
 
+          <!-- Round Hollow Sections -->
           <div
-            class="category-card"
-            onclick="openSpec('round-hollow-sections', this)"
+            class="category-item"
+            data-category="hollow"
+            data-name="Round Hollow Sections CHS"
+            onclick="openModal('round-hollow-sections', this)"
           >
             <img
               src="https://www.bhawalsteelagency.com/images/pipe%20tube/circular-hollow-section-4.jpg"
               alt="Round Hollow Sections"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Hollow Sections</span>
               <h3>Round Hollow Sections</h3>
               <p>Circular sections for structural frameworks</p>
             </div>
           </div>
 
+          <!-- Square Hollow Sections -->
           <div
-            class="category-card"
-            onclick="openSpec('square-hollow-sections', this)"
+            class="category-item"
+            data-category="hollow"
+            data-name="Square Hollow Sections SHS"
+            onclick="openModal('square-hollow-sections', this)"
           >
             <img
               src="https://www.tubetrading.in/files/catalog/product/ms-square-pipes.png"
               alt="Square Hollow Sections"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Hollow Sections</span>
               <h3>Square Hollow Sections</h3>
               <p>Square profiles for columns & fabrication</p>
             </div>
           </div>
 
+          <!-- Rectangular Hollow Sections -->
           <div
-            class="category-card"
-            onclick="openSpec('rectangular-hollow-sections', this)"
+            class="category-item"
+            data-category="hollow"
+            data-name="Rectangular Hollow Sections RHS"
+            onclick="openModal('rectangular-hollow-sections', this)"
           >
             <img
               src="https://cpimg.tistatic.com/10600670/b/4/Rectangular-Hollow-Section-Pipes.jpg"
               alt="Rectangular Hollow Sections"
-              class="card-img"
+              class="category-image"
             />
-            <div class="card-content">
+            <div class="category-info">
+              <span class="category-badge">Hollow Sections</span>
               <h3>Rectangular Hollow Sections</h3>
               <p>RHS for beams, trusses & modern structures</p>
             </div>
@@ -610,22 +955,21 @@
       </div>
     </section>
 
-    <!-- MODAL 1 -->
-    <div class="spec-modal" id="modal-ms-black-pipes">
+    <!-- Modals -->
+    <!-- MS Black Pipes Modal -->
+    <div class="modal" id="modal-ms-black-pipes">
       <div class="modal-header">
         <div class="container">
-          <div class="modal-title">
-            <h2>MS Black Pipes (IS:1239 — A/B/C Class)</h2>
-          </div>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <h2>MS Black Pipes (IS:1239 — A/B/C Class)</h2>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-details-grid">
-            <div class="spec-card">
+          <div class="spec-grid">
+            <div class="spec-box">
               <h3>Specifications</h3>
-              <ul class="spec-list">
+              <ul>
                 <li><strong>Standard:</strong> IS:1239 (Part 1)</li>
                 <li>
                   <strong>Classes:</strong> A / B / C (Light / Medium / Heavy)
@@ -635,9 +979,9 @@
                 <li><strong>Finish:</strong> Black (Varnished / Oiled)</li>
               </ul>
             </div>
-            <div class="spec-card">
+            <div class="spec-box">
               <h3>Features</h3>
-              <ul class="spec-list">
+              <ul>
                 <li>Durable and cost-effective</li>
                 <li>Excellent weldability</li>
                 <li>High tensile strength</li>
@@ -646,23 +990,23 @@
               </ul>
             </div>
           </div>
-          <div class="spec-card">
+          <div class="applications-section">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">
-                <div class="application-icon">🏗️</div>
+              <div class="app-card">
+                <div class="app-icon">🏗️</div>
                 <h4>Construction</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🚰</div>
+              <div class="app-card">
+                <div class="app-icon">🚰</div>
                 <h4>Water Supply</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🏭</div>
+              <div class="app-card">
+                <div class="app-icon">🏭</div>
                 <h4>Fabrication</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">⚙️</div>
+              <div class="app-card">
+                <div class="app-icon">⚙️</div>
                 <h4>General Engineering</h4>
               </div>
             </div>
@@ -671,20 +1015,20 @@
       </div>
     </div>
 
-    <!-- MODAL 2 -->
-    <div class="spec-modal" id="modal-gi-pipes">
+    <!-- GI Pipes Modal -->
+    <div class="modal" id="modal-gi-pipes">
       <div class="modal-header">
         <div class="container">
-          <div class="modal-title"><h2>GI Pipes (Galvanized Iron)</h2></div>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <h2>GI Pipes (Galvanized Iron)</h2>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-details-grid">
-            <div class="spec-card">
+          <div class="spec-grid">
+            <div class="spec-box">
               <h3>Specifications</h3>
-              <ul class="spec-list">
+              <ul>
                 <li><strong>Standard:</strong> IS:1239 / IS:3589</li>
                 <li><strong>Coating:</strong> Hot Dip Galvanized (HDG)</li>
                 <li><strong>Thickness:</strong> 2mm – 8mm</li>
@@ -692,9 +1036,9 @@
                 <li><strong>Finish:</strong> Silver Zinc Coated</li>
               </ul>
             </div>
-            <div class="spec-card">
+            <div class="spec-box">
               <h3>Features</h3>
-              <ul class="spec-list">
+              <ul>
                 <li>Corrosion-resistant</li>
                 <li>Long outdoor life</li>
                 <li>Easy to install</li>
@@ -703,23 +1047,23 @@
               </ul>
             </div>
           </div>
-          <div class="spec-card">
+          <div class="applications-section">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">
-                <div class="application-icon">🚿</div>
+              <div class="app-card">
+                <div class="app-icon">🚿</div>
                 <h4>Plumbing</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🏠</div>
+              <div class="app-card">
+                <div class="app-icon">🏠</div>
                 <h4>Building Services</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🌾</div>
+              <div class="app-card">
+                <div class="app-icon">🌾</div>
                 <h4>Irrigation</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">⚙️</div>
+              <div class="app-card">
+                <div class="app-icon">⚙️</div>
                 <h4>Outdoor Installations</h4>
               </div>
             </div>
@@ -728,20 +1072,20 @@
       </div>
     </div>
 
-    <!-- MODAL 3 -->
-    <div class="spec-modal" id="modal-seamless-pipes">
+    <!-- Seamless Pipes Modal -->
+    <div class="modal" id="modal-seamless-pipes">
       <div class="modal-header">
         <div class="container">
-          <div class="modal-title"><h2>Seamless Pipes (ASTM / API)</h2></div>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <h2>Seamless Pipes (ASTM / API)</h2>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-details-grid">
-            <div class="spec-card">
+          <div class="spec-grid">
+            <div class="spec-box">
               <h3>Specifications</h3>
-              <ul class="spec-list">
+              <ul>
                 <li><strong>Standards:</strong> ASTM A106, API 5L</li>
                 <li><strong>Grades:</strong> Gr. A / B / C / X42 to X70</li>
                 <li><strong>Size Range:</strong> ½" to 24" NB</li>
@@ -749,9 +1093,9 @@
                 <li><strong>End:</strong> Plain / Beveled</li>
               </ul>
             </div>
-            <div class="spec-card">
+            <div class="spec-box">
               <h3>Features</h3>
-              <ul class="spec-list">
+              <ul>
                 <li>High pressure strength</li>
                 <li>No weld joints</li>
                 <li>Uniform wall thickness</li>
@@ -760,23 +1104,23 @@
               </ul>
             </div>
           </div>
-          <div class="spec-card">
+          <div class="applications-section">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">
-                <div class="application-icon">⛽</div>
+              <div class="app-card">
+                <div class="app-icon">⛽</div>
                 <h4>Oil & Gas</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🏭</div>
+              <div class="app-card">
+                <div class="app-icon">🏭</div>
                 <h4>Power Plants</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">⚙️</div>
+              <div class="app-card">
+                <div class="app-icon">⚙️</div>
                 <h4>Mechanical Systems</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🚧</div>
+              <div class="app-card">
+                <div class="app-icon">🚧</div>
                 <h4>Industrial Piping</h4>
               </div>
             </div>
@@ -785,20 +1129,20 @@
       </div>
     </div>
 
-    <!-- MODAL 4 -->
-    <div class="spec-modal" id="modal-erw-pipes">
+    <!-- ERW Pipes Modal -->
+    <div class="modal" id="modal-erw-pipes">
       <div class="modal-header">
         <div class="container">
-          <div class="modal-title"><h2>ERW Pipes</h2></div>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <h2>ERW Pipes</h2>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-details-grid">
-            <div class="spec-card">
+          <div class="spec-grid">
+            <div class="spec-box">
               <h3>Specifications</h3>
-              <ul class="spec-list">
+              <ul>
                 <li><strong>Standard:</strong> IS:3589 / IS:1239</li>
                 <li><strong>Size Range:</strong> 15mm NB – 600mm NB</li>
                 <li><strong>Thickness:</strong> 2mm – 10mm</li>
@@ -806,9 +1150,9 @@
                 <li><strong>Ends:</strong> Plain / Beveled</li>
               </ul>
             </div>
-            <div class="spec-card">
+            <div class="spec-box">
               <h3>Features</h3>
-              <ul class="spec-list">
+              <ul>
                 <li>Uniform wall thickness</li>
                 <li>Accurate dimensions</li>
                 <li>Easy to fabricate</li>
@@ -817,23 +1161,23 @@
               </ul>
             </div>
           </div>
-          <div class="spec-card">
+          <div class="applications-section">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">
-                <div class="application-icon">🏗️</div>
+              <div class="app-card">
+                <div class="app-icon">🏗️</div>
                 <h4>Structural Framework</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🚿</div>
+              <div class="app-card">
+                <div class="app-icon">🚿</div>
                 <h4>Water Conveyance</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🏠</div>
+              <div class="app-card">
+                <div class="app-icon">🏠</div>
                 <h4>Plumbing</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">⚙️</div>
+              <div class="app-card">
+                <div class="app-icon">⚙️</div>
                 <h4>Fabrication</h4>
               </div>
             </div>
@@ -842,22 +1186,20 @@
       </div>
     </div>
 
-    <!-- MODAL 5 -->
-    <div class="spec-modal" id="modal-stainless-steel-pipes">
+    <!-- Stainless Steel Pipes Modal -->
+    <div class="modal" id="modal-stainless-steel-pipes">
       <div class="modal-header">
         <div class="container">
-          <div class="modal-title">
-            <h2>Stainless Steel Pipes (SS 202 / 304 / 316)</h2>
-          </div>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <h2>Stainless Steel Pipes (SS 202 / 304 / 316)</h2>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-details-grid">
-            <div class="spec-card">
+          <div class="spec-grid">
+            <div class="spec-box">
               <h3>Specifications</h3>
-              <ul class="spec-list">
+              <ul>
                 <li><strong>Grades:</strong> SS 202, SS 304, SS 316</li>
                 <li><strong>Standards:</strong> ASTM A312 / A213</li>
                 <li><strong>Type:</strong> Seamless / Welded</li>
@@ -865,9 +1207,9 @@
                 <li><strong>Size Range:</strong> ½" NB – 12" NB</li>
               </ul>
             </div>
-            <div class="spec-card">
+            <div class="spec-box">
               <h3>Features</h3>
-              <ul class="spec-list">
+              <ul>
                 <li>Corrosion and heat resistant</li>
                 <li>Hygienic and non-reactive</li>
                 <li>Excellent weldability</li>
@@ -876,23 +1218,23 @@
               </ul>
             </div>
           </div>
-          <div class="spec-card">
+          <div class="applications-section">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">
-                <div class="application-icon">🍽️</div>
+              <div class="app-card">
+                <div class="app-icon">🍽️</div>
                 <h4>Food Processing</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🧪</div>
+              <div class="app-card">
+                <div class="app-icon">🧪</div>
                 <h4>Chemical Plants</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🏗️</div>
+              <div class="app-card">
+                <div class="app-icon">🏗️</div>
                 <h4>Architectural Structures</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">⚙️</div>
+              <div class="app-card">
+                <div class="app-icon">⚙️</div>
                 <h4>Industrial Piping</h4>
               </div>
             </div>
@@ -901,22 +1243,20 @@
       </div>
     </div>
 
-    <!-- MODAL 6 -->
-    <div class="spec-modal" id="modal-conduit-pipes">
+    <!-- Conduit Pipes Modal -->
+    <div class="modal" id="modal-conduit-pipes">
       <div class="modal-header">
         <div class="container">
-          <div class="modal-title">
-            <h2>Conduit Pipes (GI Electrical Conduit)</h2>
-          </div>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <h2>Conduit Pipes (GI Electrical Conduit)</h2>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-details-grid">
-            <div class="spec-card">
+          <div class="spec-grid">
+            <div class="spec-box">
               <h3>Specifications</h3>
-              <ul class="spec-list">
+              <ul>
                 <li><strong>Standard:</strong> IS:9537</li>
                 <li><strong>Material:</strong> GI (Galvanized Iron)</li>
                 <li><strong>Types:</strong> Light / Medium / Heavy</li>
@@ -924,9 +1264,9 @@
                 <li><strong>Finish:</strong> Silver HDG Coating</li>
               </ul>
             </div>
-            <div class="spec-card">
+            <div class="spec-box">
               <h3>Features</h3>
-              <ul class="spec-list">
+              <ul>
                 <li>Fire and corrosion resistant</li>
                 <li>Ensures electrical safety</li>
                 <li>Protects cables from impact</li>
@@ -935,23 +1275,23 @@
               </ul>
             </div>
           </div>
-          <div class="spec-card">
+          <div class="applications-section">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">
-                <div class="application-icon">🏢</div>
+              <div class="app-card">
+                <div class="app-icon">🏢</div>
                 <h4>Commercial Buildings</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🏠</div>
+              <div class="app-card">
+                <div class="app-icon">🏠</div>
                 <h4>Residential Wiring</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🏭</div>
+              <div class="app-card">
+                <div class="app-icon">🏭</div>
                 <h4>Industrial Electricals</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">⚡</div>
+              <div class="app-card">
+                <div class="app-icon">⚡</div>
                 <h4>Power Distribution</h4>
               </div>
             </div>
@@ -960,20 +1300,20 @@
       </div>
     </div>
 
-    <!-- MODAL 7 -->
-    <div class="spec-modal" id="modal-round-hollow-sections">
+    <!-- Round Hollow Sections Modal -->
+    <div class="modal" id="modal-round-hollow-sections">
       <div class="modal-header">
         <div class="container">
-          <div class="modal-title"><h2>Round Hollow Sections (CHS)</h2></div>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <h2>Round Hollow Sections (CHS)</h2>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-details-grid">
-            <div class="spec-card">
+          <div class="spec-grid">
+            <div class="spec-box">
               <h3>Specifications</h3>
-              <ul class="spec-list">
+              <ul>
                 <li><strong>Standard:</strong> IS:4923 / EN 10210</li>
                 <li><strong>Size Range:</strong> 21.3mm – 406.4mm OD</li>
                 <li><strong>Thickness:</strong> 1.6mm – 12mm</li>
@@ -981,9 +1321,9 @@
                 <li><strong>Finish:</strong> Black / Galvanized</li>
               </ul>
             </div>
-            <div class="spec-card">
+            <div class="spec-box">
               <h3>Features</h3>
-              <ul class="spec-list">
+              <ul>
                 <li>Uniform cross-section</li>
                 <li>High structural rigidity</li>
                 <li>Lightweight and strong</li>
@@ -992,23 +1332,23 @@
               </ul>
             </div>
           </div>
-          <div class="spec-card">
+          <div class="applications-section">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">
-                <div class="application-icon">🏗️</div>
+              <div class="app-card">
+                <div class="app-icon">🏗️</div>
                 <h4>Structural Framework</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🚧</div>
+              <div class="app-card">
+                <div class="app-icon">🚧</div>
                 <h4>Bridges & Towers</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🏭</div>
+              <div class="app-card">
+                <div class="app-icon">🏭</div>
                 <h4>Industrial Sheds</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">⚙️</div>
+              <div class="app-card">
+                <div class="app-icon">⚙️</div>
                 <h4>Fabrication</h4>
               </div>
             </div>
@@ -1017,20 +1357,20 @@
       </div>
     </div>
 
-    <!-- MODAL 8 -->
-    <div class="spec-modal" id="modal-square-hollow-sections">
+    <!-- Square Hollow Sections Modal -->
+    <div class="modal" id="modal-square-hollow-sections">
       <div class="modal-header">
         <div class="container">
-          <div class="modal-title"><h2>Square Hollow Sections (SHS)</h2></div>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <h2>Square Hollow Sections (SHS)</h2>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-details-grid">
-            <div class="spec-card">
+          <div class="spec-grid">
+            <div class="spec-box">
               <h3>Specifications</h3>
-              <ul class="spec-list">
+              <ul>
                 <li><strong>Standard:</strong> IS:4923 / EN 10219</li>
                 <li><strong>Size Range:</strong> 20x20mm – 250x250mm</li>
                 <li><strong>Thickness:</strong> 1.6mm – 12mm</li>
@@ -1038,9 +1378,9 @@
                 <li><strong>Finish:</strong> Black / Galvanized</li>
               </ul>
             </div>
-            <div class="spec-card">
+            <div class="spec-box">
               <h3>Features</h3>
-              <ul class="spec-list">
+              <ul>
                 <li>Excellent structural strength</li>
                 <li>Clean square geometry</li>
                 <li>Good weldability</li>
@@ -1049,23 +1389,23 @@
               </ul>
             </div>
           </div>
-          <div class="spec-card">
+          <div class="applications-section">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">
-                <div class="application-icon">🏢</div>
+              <div class="app-card">
+                <div class="app-icon">🏢</div>
                 <h4>Architectural Columns</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🏗️</div>
+              <div class="app-card">
+                <div class="app-icon">🏗️</div>
                 <h4>Fabricated Frames</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🏭</div>
+              <div class="app-card">
+                <div class="app-icon">🏭</div>
                 <h4>Industrial Structures</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🚧</div>
+              <div class="app-card">
+                <div class="app-icon">🚧</div>
                 <h4>Support Systems</h4>
               </div>
             </div>
@@ -1074,22 +1414,20 @@
       </div>
     </div>
 
-    <!-- MODAL 9 -->
-    <div class="spec-modal" id="modal-rectangular-hollow-sections">
+    <!-- Rectangular Hollow Sections Modal -->
+    <div class="modal" id="modal-rectangular-hollow-sections">
       <div class="modal-header">
         <div class="container">
-          <div class="modal-title">
-            <h2>Rectangular Hollow Sections (RHS)</h2>
-          </div>
-          <button class="close-btn" onclick="closeSpec()">✕ Close</button>
+          <h2>Rectangular Hollow Sections (RHS)</h2>
+          <button class="close-button" onclick="closeModal()">✕ Close</button>
         </div>
       </div>
-      <div class="modal-body">
+      <div class="modal-content">
         <div class="container">
-          <div class="spec-details-grid">
-            <div class="spec-card">
+          <div class="spec-grid">
+            <div class="spec-box">
               <h3>Specifications</h3>
-              <ul class="spec-list">
+              <ul>
                 <li><strong>Standard:</strong> IS:4923 / EN 10219</li>
                 <li><strong>Size Range:</strong> 40x20mm – 400x200mm</li>
                 <li><strong>Thickness:</strong> 1.6mm – 12mm</li>
@@ -1097,9 +1435,9 @@
                 <li><strong>Finish:</strong> Black / Galvanized</li>
               </ul>
             </div>
-            <div class="spec-card">
+            <div class="spec-box">
               <h3>Features</h3>
-              <ul class="spec-list">
+              <ul>
                 <li>Excellent flexural strength</li>
                 <li>Lightweight yet strong</li>
                 <li>Uniform wall thickness</li>
@@ -1108,23 +1446,23 @@
               </ul>
             </div>
           </div>
-          <div class="spec-card">
+          <div class="applications-section">
             <h3>Applications</h3>
             <div class="applications-grid">
-              <div class="application-item">
-                <div class="application-icon">🏗️</div>
+              <div class="app-card">
+                <div class="app-icon">🏗️</div>
                 <h4>Structural Frames</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🚧</div>
+              <div class="app-card">
+                <div class="app-icon">🚧</div>
                 <h4>Trusses & Bridges</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">🏭</div>
+              <div class="app-card">
+                <div class="app-icon">🏭</div>
                 <h4>Industrial Buildings</h4>
               </div>
-              <div class="application-item">
-                <div class="application-icon">⚙️</div>
+              <div class="app-card">
+                <div class="app-icon">⚙️</div>
                 <h4>Fabrication Works</h4>
               </div>
             </div>
@@ -1133,10 +1471,11 @@
       </div>
     </div>
 
+    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-grid">
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>About India Steel</h3>
             <p>
               Leading supplier of quality steel products in India. We provide
@@ -1144,7 +1483,7 @@
               compliance.
             </p>
           </div>
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>Quick Links</h3>
             <ul>
               <li><a href="#home">Home</a></li>
@@ -1153,7 +1492,7 @@
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>Product Categories</h3>
             <ul>
               <li><a href="#">Steel Pipes & Tubes</a></li>
@@ -1162,7 +1501,7 @@
               <li><a href="#">Sheets & Plates</a></li>
             </ul>
           </div>
-          <div class="footer-section">
+          <div class="footer-col">
             <h3>Standards We Follow</h3>
             <ul>
               <li>ASTM Standards</li>
@@ -1173,47 +1512,102 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2024 India Steel Industries. All Rights Reserved.</p>
+          <p>&copy; 2025 India Steel Industries. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
 
     <script>
-      let currentModal = null;
-      let selectedCard = null;
+      // Filter Products
+      function filterProducts(category) {
+        const items = document.querySelectorAll(".category-item");
+        const buttons = document.querySelectorAll(".filter-btn");
+        let visibleCount = 0;
 
-      function openSpec(specId, cardElement) {
-        if (currentModal) {
-          currentModal.classList.remove("active");
-        }
-        if (selectedCard) {
-          selectedCard.classList.remove("selected");
-        }
-        const modal = document.getElementById("modal-" + specId);
-        if (modal) {
-          modal.classList.add("active");
-          currentModal = modal;
-          document.body.style.overflow = "hidden";
-        }
-        cardElement.classList.add("selected");
-        selectedCard = cardElement;
+        // Update active button
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        // Clear search box
+        document.querySelector(".search-box input").value = "";
+
+        // Filter items
+        items.forEach((item) => {
+          if (category === "all" || item.dataset.category === category) {
+            item.classList.remove("hidden");
+            visibleCount++;
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+
+        // Update count
+        updateResultsCount(visibleCount);
       }
 
-      function closeSpec() {
-        if (currentModal) {
-          currentModal.classList.remove("active");
-          currentModal = null;
-          document.body.style.overflow = "auto";
+      // Search Products
+      function searchProducts(query) {
+        const items = document.querySelectorAll(".category-item");
+        const searchTerm = query.toLowerCase();
+        let visibleCount = 0;
+
+        // Reset filter buttons when searching
+        if (query.length > 0) {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((btn) => btn.classList.remove("active"));
         }
-        if (selectedCard) {
-          selectedCard.classList.remove("selected");
-          selectedCard = null;
-        }
+
+        items.forEach((item) => {
+          const name = item.dataset.name.toLowerCase();
+          if (name.includes(searchTerm)) {
+            item.classList.remove("hidden");
+            visibleCount++;
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+
+        updateResultsCount(visibleCount);
       }
 
+      // Update Results Count
+      function updateResultsCount(count) {
+        const resultsCount = document.getElementById("resultsCount");
+        resultsCount.textContent = `Showing ${count} product${
+          count !== 1 ? "s" : ""
+        }`;
+      }
+
+      // Open Modal
+      function openModal(id, card) {
+        document
+          .querySelectorAll(".modal")
+          .forEach((m) => m.classList.remove("active"));
+        document
+          .querySelectorAll(".category-item")
+          .forEach((c) => c.classList.remove("selected"));
+        document.getElementById("modal-" + id).classList.add("active");
+        card.classList.add("selected");
+        document.body.style.overflow = "hidden";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // Close Modal
+      function closeModal() {
+        document
+          .querySelectorAll(".modal")
+          .forEach((m) => m.classList.remove("active"));
+        document
+          .querySelectorAll(".category-item")
+          .forEach((c) => c.classList.remove("selected"));
+        document.body.style.overflow = "auto";
+      }
+
+      // Close modal on Escape key
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") {
-          closeSpec();
+          closeModal();
         }
       });
     </script>
