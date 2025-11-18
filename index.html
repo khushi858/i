@@ -34,6 +34,7 @@
       }
 
       /* Top Info Bar */
+      /* Top Info Bar */
       .top-info {
         background: var(--dark-gray);
         color: var(--white);
@@ -64,6 +65,7 @@
       .top-info a:hover {
         color: var(--light-blue);
       }
+
       /* Header */
       header {
         background: #fff;
@@ -568,10 +570,9 @@
         background: linear-gradient(
             135deg,
             rgba(10, 15, 28, 0.95) 0%,
-            rgba(26, 31, 53, 0.95) 50%,
-            rgba(13, 24, 41, 0.95) 100%
+            rgba(26, 31, 53, 0.95) 50%
           ),
-          url("https://static.vecteezy.com/system/resources/thumbnails/033/059/743/small/high-quality-galvanized-steel-pipe-or-aluminum-and-chrome-stainless-steel-pipes-in-stack-ai-generated-image-photo.jpg");
+          url("https://endura-steel.com/wp-content/uploads/2023/07/Custom-dimensions-1200x900-px-1024x768.jpeg");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -922,7 +923,7 @@
             rgba(13, 22, 37, 0.95) 50%,
             rgba(10, 15, 28, 0.95) 100%
           ),
-          url("https://media.istockphoto.com/id/1046590862/photo/large-silver-pipes-stacked-at-factory.jpg?s=612x612&w=0&k=20&c=hEEPljtqfVODUzEduNoBQ4Jh_TnYrj0ogt9FWIcNCh4=");
+          url("https://img.freepik.com/premium-photo/iron-steel-factory-pipe-mill-located-taganrog-south-russia_215274-1185.jpg");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -1110,52 +1111,39 @@
         border-radius: 15px;
         border: 1px solid rgba(255, 255, 255, 0.15);
         color: #fff;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.35s ease;
         position: relative;
         overflow: hidden;
         cursor: pointer;
         display: flex;
         align-items: center;
         gap: 20px;
+        text-decoration: none !important;
       }
 
+      /* Remove slanting shine effect */
       .info-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.1),
-          transparent
-        );
-        transition: left 0.5s;
+        display: none;
       }
 
-      .info-card:hover::before {
-        left: 100%;
-      }
-
+      /* Simplified hover – NO SLANT, NO ROTATION */
       .info-card:hover {
-        transform: translateY(-10px) scale(1.02);
+        transform: translateY(-6px);
         border-color: #4da6ff;
-        box-shadow: 0 20px 40px rgba(0, 102, 255, 0.4);
-        background: rgba(255, 255, 255, 0.12);
+        box-shadow: 0 12px 30px rgba(0, 102, 255, 0.35);
+        background: rgba(255, 255, 255, 0.15);
       }
 
+      /* Icon — remove rotation */
       .info-icon {
-        font-size: 3rem;
+        font-size: 2rem;
         filter: drop-shadow(0 0 10px #4da6ff);
-        display: inline-block;
-        transition: transform 0.3s;
         flex-shrink: 0;
+        transition: transform 0.25s;
       }
 
       .info-card:hover .info-icon {
-        transform: scale(1.1) rotate(5deg);
+        transform: scale(1.08); /* ONLY scale, no rotation */
       }
 
       .info-content {
@@ -1164,6 +1152,7 @@
         gap: 5px;
       }
 
+      /* Title styling */
       .info-card h3 {
         font-size: 1.1rem;
         font-weight: 600;
@@ -1171,16 +1160,12 @@
         margin: 0;
       }
 
+      /* Remove UNDERLINE from link text */
+      .info-card a,
+      .info-card h3,
       .info-card p {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #fff;
-        margin: 0;
-      }
-
-      .info-card a {
-        color: #fff;
-        text-decoration: none;
+        text-decoration: none !important;
+        color: inherit;
       }
 
       /* ========== FORM ========== */
@@ -1555,6 +1540,7 @@
           <span>📧 info@indiasteelind.com</span>
           <span>📞 +91 22 4567 8900</span>
         </div>
+
         <div>
           <a href="#contact">Get Quote</a>
           <a href="#contact">Contact Us</a>
@@ -1971,21 +1957,21 @@
             <a href="tel:+919820123456" class="info-card">
               <div class="info-icon">📞</div>
               <div class="info-content">
-                <h3>Call Us: +91 98201 23456</h3>
+                <h3>+91 98201 23456</h3>
               </div>
             </a>
 
             <a href="mailto:sales@indiasteelindustries.com" class="info-card">
               <div class="info-icon">📧</div>
               <div class="info-content">
-                <h3>Email: sales@indiasteel.com</h3>
+                <h3>sales@indiasteel.com</h3>
               </div>
             </a>
 
             <a href="https://maps.google.com" target="_blank" class="info-card">
               <div class="info-icon">📍</div>
               <div class="info-content">
-                <h3>Location: TTC MIDC, Mumbai</h3>
+                <h3>TTC MIDC, Mumbai</h3>
               </div>
             </a>
           </div>
